@@ -1,0 +1,18 @@
+{
+  "title": "My First Post",
+  "date": "2023-08-30T00:00:00.000Z",
+  "body": {
+    "raw": "\n# Hello World\n\n",
+    "html": "<h1>Hello World</h1>"
+  },
+  "_id": "post-08.md",
+  "_raw": {
+    "sourceFilePath": "post-08.md",
+    "sourceFileName": "post-08.md",
+    "sourceFileDir": ".",
+    "contentType": "markdown",
+    "flattenedPath": "post-08"
+  },
+  "type": "Post",
+  "url": "/posts/post-08"
+}

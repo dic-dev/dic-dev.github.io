@@ -1,0 +1,48 @@
+.container {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  ul {
+    
+  }
+  h3 {
+    padding-left: 5px;
+  }
+  li {
+    padding-left: 25px;
+  }
+  p {
+    // background-color: white;
+    // border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+  }
+  img {
+    padding: 10px;
+  }
+}
+
+.profile {
+}
+
+.category {
+}
+
+.tag {
+}
+
+.icons {
+  height: 40px;
+}
+
+.title {
+  // background-color: #222222;
+  // color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
