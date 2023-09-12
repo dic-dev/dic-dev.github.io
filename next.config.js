@@ -5,7 +5,7 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   swcMinify: true,
-  trailingSlash: false,
+  trailingSlash: true,
   // experimental: {
   //   serverActions: true,
   // },

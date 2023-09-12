@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Footer from 'components/Footer';
 import Side from 'components/Side';
 import Header from 'components/Header'
+import BottomNavigation from 'components/BottomNavigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,12 +22,13 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <Header title="TechBlog(仮)" />
+        <Header title="This is a blog." />
         <div className="wrapper">
           <main>{children}</main>
-          <Side />
+          <div className="side"><Side /></div>
         </div>
         <Footer />
+        <BottomNavigation />
       </body>
     </html>
   )

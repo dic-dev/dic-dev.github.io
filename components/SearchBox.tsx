@@ -21,7 +21,7 @@ export default function Search() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.searchForm}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.search}>
       <input {...register("words")} placeholder="Search..." />
       <button type="submit" />
     </form>

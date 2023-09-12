@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from 'styles/Header.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { BiSearch } from 'react-icons/bi'
+import { BiHome } from 'react-icons/bi'
+import { BiInfoCircle } from 'react-icons/bi'
+import { BiLink } from 'react-icons/bi'
 
 type HeaderProps = {
   title: string
@@ -14,38 +13,126 @@ type HeaderProps = {
 const Header = ({ title }: HeaderProps) => {
   return (
     <header className={styles.container}>
-      <h1>{title}</h1>
-      <nav>
-        <ul>
-          <li className={styles.li}>
-            <Link className={styles.link} href="/">
-              <FontAwesomeIcon icon={faHouse} className={styles.icons} />
-              Home
-            </Link>
-          </li>
-          <li className={styles.li}>
-            <Link className={styles.link} href="/about">
-              <FontAwesomeIcon icon={faCircleInfo} className={styles.icons} />
-              About
-            </Link>
-          </li>
-          <li className={styles.li}>
-            <Link className={styles.link} href="/link">
-              <FontAwesomeIcon icon={faLink} className={styles.icons} />
-              Link
-            </Link>
-          </li>
-          <li className={styles.li}>
-            <Link className={styles.link} href="/contact">
-              <FontAwesomeIcon icon={faEnvelope} className={styles.icons} />
-              Contact
-            </Link>
-          </li>
-          <li className={styles.dammy}></li>
-        </ul>
-      </nav>
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.item}>
+        <Link className={styles.link} href="/">
+          <BiHome size="35px" />
+          <span>
+            Home
+          </span>
+        </Link>
+      </div>
+      <div className={styles.item}>
+        <Link className={styles.link} href="/about/">
+          <BiInfoCircle size="35px" />
+          <span>
+            About
+          </span>
+        </Link>
+      </div>
+      <div className={styles.item}>
+        <Link className={styles.link} href="/link/">
+          <BiLink size="35px" />
+          <span>
+            Link
+          </span>
+        </Link>
+      </div>
+      <div className={styles.search}>
+        <Link className={styles.link} href="/search">
+          <BiSearch size="35px" />
+          <span>
+            Search
+          </span>
+        </Link>
+      </div>
     </header>
   )
 }
 
 export default Header
+
+// const Header = ({ title }: HeaderProps) => {
+//   return (
+//     <header className={styles.container}>
+//       <h1 className={styles.title}>{title}</h1>
+//       <nav>
+//         <h1 className={styles.title_bar}>{title}</h1>
+//         <ul>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/">
+//               <BiHome />
+//               Home
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/about/">
+//               <BiInfoCircle />
+//               About
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/link/">
+//               <BiLink />
+//               Link
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/search">
+//               <BiSearch />
+//               Search
+//             </Link>
+//           </li>
+//           <li className={styles.dammy}></li>
+//         </ul>
+//       </nav>
+//     </header>
+//   )
+// }
+
+// export default Header
+// const Header = ({ title }: HeaderProps) => {
+//   return (
+//     <header className={styles.container}>
+//       <h1>{title}</h1>
+//       <nav>
+//         <ul>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/">
+//               <BiHome />
+//               Home
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/about/">
+//               <BiInfoCircle />
+//               About
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/link/">
+//               <BiLink />
+//               Link
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/contact/">
+//               <BiMailSend />
+//               Contact
+//             </Link>
+//           </li>
+//           <li className={styles.li}>
+//             <Link className={styles.link} href="/search">
+//               <BiSearch />
+//               Search
+//             </Link>
+//           </li>
+//           <li className={styles.dammy}></li>
+//         </ul>
+//         <SearchBox />
+//       </nav>
+//     </header>
+//   )
+// }
+
+// export default Header

@@ -2,18 +2,20 @@ import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
 import styles from 'styles/PostInfo.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
-import { faTags } from '@fortawesome/free-solid-svg-icons';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { BiSolidCategory } from 'react-icons/bi'
+import { BiSolidTag } from 'react-icons/bi'
+import { BiSolidTime } from 'react-icons/bi'
+import { BiCategory } from 'react-icons/bi'
+import { BiTag } from 'react-icons/bi'
+import { BiCalendar } from 'react-icons/bi'
 
 const PostInfo = (post: Post) => {
   const category = post.category;
   const tags = post.tags;
   return (
     <ul className={styles.container}>
-      <li className={styles.iconbox} key={1}>
-        <FontAwesomeIcon icon={faClock} className={styles.icons} />
+      <li key={1}>
+        <BiCalendar size="30px" />
       </li>
       <li key={2}>
         <time dateTime={post.date}>
@@ -22,23 +24,23 @@ const PostInfo = (post: Post) => {
       </li>
       {typeof category !== 'undefined' &&
       <>
-        <li className={styles.iconbox} key={3}>
-          <FontAwesomeIcon icon={faFolder} className={styles.icons} />
+        <li key={3}>
+          <BiCategory size="30px" />
         </li>
         <li key={4}>
-          <Link className={styles.button} href={`/category/${category}/`}>{category}</Link>
+          <Link className={styles.category} href={`/category/${category}/`}>{category}</Link>
         </li>
       </>
       }
       {typeof tags !== 'undefined' &&
       <>
-        <li className={styles.iconbox} key={5}>
-          <FontAwesomeIcon icon={faTags} className={styles.icons} />
+        <li key={5}>
+          <BiTag size="30px" />
         </li>
         {tags.map((tag, idx) => {
           return (
             <li key={idx + 6}>
-              <Link className={styles.button} href={`/tag/${tag}/`}>{tag}</Link>
+              <Link className={styles.tag} href={`/tag/${tag}/`}>{tag}</Link>
             </li>
           )
         })}

@@ -8,9 +8,10 @@ type PageProps = {
   currentPage: number
   postsPerPage: number
   path: string
+  query: string
 }
 
-const PaginatedPage = ({posts, currentPage, postsPerPage, path}: PageProps) => {
+const PaginatedPage = ({posts, currentPage, postsPerPage, path, query = ''}: PageProps) => {
   const totalPosts = posts.length;
   const left = (currentPage - 1) * postsPerPage;
   const right = currentPage * postsPerPage < totalPosts ? currentPage * postsPerPage - 1 : totalPosts - 1;
@@ -23,7 +24,7 @@ const PaginatedPage = ({posts, currentPage, postsPerPage, path}: PageProps) => {
         <PostCard key={idx} {...item} />
       ))}
       </div>
-      <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} />
+      <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
     </div>
   )
 }

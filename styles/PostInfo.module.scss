@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.5rem;
 
   ul {
     display: flex;
@@ -9,26 +9,33 @@
     align-items: center;
     gap: 10px;
   }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+  }
 }
 
-.icons {
-  height: 1.8rem;
-}
-
-.partition {
-  height: 1.8rem;
-}
-
-.button {
-  height: 20px;
+.category {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 100vh;
-  background-color: white;
-}
-
-.iconbox {
+  background-color: #fcd997;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30px;
+}
+.tag {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 100vh;
+  background-color: lightblue;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 }

@@ -1,6 +1,5 @@
-import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import PaginatedPage from 'components/PaginatedPage'
+import CategoryPage from '@/components/CategoryPage';
 
 export const generateStaticParams = async () => {
   const categorizedPosts = allPosts.filter((post) => typeof post.category !== 'undefined' && post.category !== '');
@@ -24,14 +23,9 @@ export const generateStaticParams = async () => {
 }
 
 const Page = ({ params }: { params: { category: string, page: string } }) => {
-  const category = params.category;
-  let posts = allPosts.filter((post) => post.category === category);
-  posts = posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-  const currentPage = Number(params.page);
-  const postsPerPage = 4;
 
   return (
-    <PaginatedPage posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={`/category/${category}/page/`}/>
+    <CategoryPage category={params.category} page={params.page} />
   )
 }
 

@@ -6,6 +6,7 @@ type PaginationProps = {
   currentPage: number
   postsPerPage: number
   path: string
+  query: string
 }
 
 function pagination(c: number, m: number) {
@@ -39,7 +40,7 @@ function pagination(c: number, m: number) {
   return rangeWithDots;
 }
 
-const Pagination = ({posts, currentPage, postsPerPage, path}: PaginationProps) => {
+const Pagination = ({posts, currentPage, postsPerPage, path, query = ''}: PaginationProps) => {
   const totalPosts = posts.length;
   const lastPage = Math.ceil(totalPosts / postsPerPage);
   const rangeWithDots = pagination(currentPage, lastPage);
@@ -56,13 +57,13 @@ const Pagination = ({posts, currentPage, postsPerPage, path}: PaginationProps) =
           } else if (value === currentPage) {
             return (
               <li key={idx} className={styles.current}>
-                <Link className={styles.link} href={path + String(value)}>{value}</Link>
+                <Link className={styles.link} href={path + String(value) + query}>{value}</Link>
               </li>
             )
           } else {
             return (
               <li key={idx} className={styles.other}>
-                <Link className={styles.link} href={path + String(value)}>{value}</Link>
+                <Link className={styles.link} href={path + String(value) + query}>{value}</Link>
               </li>
             )
           }

@@ -17,7 +17,7 @@ const Page = ({ params }: { params: { page: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <PaginatedPage posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path="/page/"/>
+    <PaginatedPage posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path="/page/" query="" />
   )
 }
 
