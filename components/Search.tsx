@@ -4,7 +4,6 @@ import { compareDesc } from 'date-fns'
 import { useSearchParams } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import PaginationedPage from 'components/PaginatedPage'
-import SearchBox from 'components/SearchBox'
 import SearchIndex from 'components/SearchIndex'
 import styles from 'styles/Page.module.scss'
 

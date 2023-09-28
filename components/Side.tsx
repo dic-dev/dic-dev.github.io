@@ -1,6 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
 import Link from 'next/link'
-import SearchBox from 'components/SearchBox'
 import styles from 'styles/Side.module.scss'
 import { BiCategory } from 'react-icons/bi'
 import { BiTag } from 'react-icons/bi'
@@ -17,7 +16,6 @@ const Side = () => {
 
   return (
     <nav className={styles.container}>
-      <SearchBox />
       <div className={styles.profile}>
         <div className={styles.title}>
           <ImProfile size="26px" />

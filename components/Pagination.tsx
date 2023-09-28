@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import styles from 'styles/Pagination.module.scss'
 
 type PaginationProps = {
   posts: any
@@ -11,13 +10,13 @@ type PaginationProps = {
 
 function pagination(c: number, m: number) {
   var current = c,
-      last = m,
-      delta = 2,
-      left = current - delta,
-      right = current + delta + 1,
-      range = [],
-      rangeWithDots = [],
-      l;
+    last = m,
+    delta = 2,
+    left = current - delta,
+    right = current + delta + 1,
+    range = [],
+    rangeWithDots = [],
+    l;
 
   for (let i = 1; i <= last; i++) {
     if (i == 1 || i == last || i >= left && i < right) {
@@ -40,35 +39,54 @@ function pagination(c: number, m: number) {
   return rangeWithDots;
 }
 
-const Pagination = ({posts, currentPage, postsPerPage, path, query = ''}: PaginationProps) => {
+const Pagination = ({ posts, currentPage, postsPerPage, path, query = '' }: PaginationProps) => {
   const totalPosts = posts.length;
   const lastPage = Math.ceil(totalPosts / postsPerPage);
   const rangeWithDots = pagination(currentPage, lastPage);
   return (
-    <nav className={styles.container}>
-      <ul>
+    <nav className="mx-auto isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+      {currentPage === 1
+        ? <span>aaa</span>
+        : <Link href={path + String(currentPage - 1) + query}
+          >
+            bbb
+          </Link>
+      }
+
       {rangeWithDots.map((value: any, idx: number) => {
-          if (value === '...') {
-            return (
-              <li key={idx} className={styles.dots}>
-                ...
-              </li>
-            )
-          } else if (value === currentPage) {
-            return (
-              <li key={idx} className={styles.current}>
-                <Link className={styles.link} href={path + String(value) + query}>{value}</Link>
-              </li>
-            )
-          } else {
-            return (
-              <li key={idx} className={styles.other}>
-                <Link className={styles.link} href={path + String(value) + query}>{value}</Link>
-              </li>
-            )
-          }
+        if (value === '...') {
+          return (
+            <span key={idx}
+              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0"
+            >
+              ...
+            </span>
+          )
+        } else if (value === currentPage) {
+          return (
+            <Link key={idx}
+              href={path + String(value) + query}
+              className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {value}
+            </Link>
+          )
+        } else {
+          return (
+            <Link key={idx}
+              href={path + String(value) + query}
+              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+            >
+              {value}
+            </Link>
+          )
+        }
       })}
-      </ul>
+
+      {currentPage === lastPage
+        ? <span>aaa</span>
+        : <Link href={path + String(currentPage + 1) + query}>bbb</Link>
+      }
     </nav>
   )
 }

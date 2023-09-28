@@ -9,11 +9,6 @@
     grid-template-columns: 1fr repeat(4, 90px);
     grid-template-rows: 1fr;
   }
-  @media screen and (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 1fr repeat(3, 90px);
-    grid-template-rows: 1fr;
-  }
 
   h1 {
     padding-top: 10px;
@@ -63,9 +58,6 @@
     align-items: center;
     height: 100%;
     background-color: #222222;
-  }
-  @media screen and (min-width: 1024px) {
-    display: none;
   }
 }
 .search:hover {
