@@ -1,11 +1,20 @@
+import { Suspense } from 'react'
 import Search from 'components/Search'
+
+const SearchFallback = () => {
+  return <>placeholder</>
+}
 
 const Page = ({ params }: { params: { page: string } }) => {
   const currentPage = Number(params.page);
   const postsPerPage = 4;
 
   return (
-    <Search currentPage={currentPage} postsPerPage={postsPerPage} />
+    <>
+      <Suspense fallback={<SearchFallback />}>
+        <Search currentPage={currentPage} postsPerPage={postsPerPage} />
+      </Suspense>
+    </>
   )
 }
 

@@ -13,14 +13,12 @@ const Navigation = () => {
   const { watch, register, handleSubmit, setValue } = useForm<FormValues>()
   const toggle = watch('toggle', false)
 
-  // if (typeof window !== "undefined") {
-    useFormPersist("storageKey", {
-      watch,
-      setValue,
-      // storage: window.localStorage, // default window.sessionStorage
-      // exclude: ['checkbox']
-    });
-  // }
+  useFormPersist("storageKey", {
+    watch,
+    setValue,
+    // storage: window.localStorage, // default window.sessionStorage
+    // exclude: ['checkbox']
+  });
 
   const router = useRouter()
 
