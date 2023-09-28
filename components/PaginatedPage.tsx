@@ -1,6 +1,7 @@
 import { allPosts } from 'contentlayer/generated'
 import PostCard from 'components/PostCard'
 import Pagination from 'components/Pagination'
+import AltPagination from 'components/AltPagination'
 import styles from 'styles/PaginatedPage.module.scss'
 
 type PageProps = {
@@ -24,7 +25,10 @@ const PaginatedPage = ({posts, currentPage, postsPerPage, path, query = ''}: Pag
         <PostCard key={idx} {...item} />
       ))}
       </div>
-      <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
+      {path === '/search/' 
+        ? <AltPagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
+        : <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
+      }
     </div>
   )
 }

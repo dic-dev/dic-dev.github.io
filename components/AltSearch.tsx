@@ -12,12 +12,12 @@ type SearchProps = {
   postsPerPage: number
 }
  
-const Search = ({ currentPage = 1, postsPerPage = 4 }: SearchProps) => {
+const AltSearch = ({ currentPage = 1, postsPerPage = 4 }: SearchProps) => {
   const searchParams = useSearchParams()
   const search = searchParams.get('q')
   const page = searchParams.get('page') === null ? 1 : Number(searchParams.get('page'))
 
-  const query = search === null ? '' : `?q=${search.replace(' ', '+')}&page=${page}`
+  const query = search === null ? '' : `?q=${search.replace(' ', '+')}&page=`
 
   let posts: any = []
   if (search !== null && search !== '') {
@@ -54,11 +54,11 @@ const Search = ({ currentPage = 1, postsPerPage = 4 }: SearchProps) => {
           <div className={styles.card}>
               <p>{result}</p>
           </div>
-          <PaginationedPage posts={posts} currentPage={page} postsPerPage={postsPerPage} path="/test/" query={query} />
+          <PaginationedPage posts={posts} currentPage={page} postsPerPage={postsPerPage} path="/search/" query={query} />
       </div>
       }
     </>
   )
 }
 
-export default Search
+export default AltSearch

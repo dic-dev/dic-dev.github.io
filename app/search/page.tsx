@@ -1,7 +1,7 @@
-import Search from 'components/Search'
+import AltSearch from 'components/AltSearch'
 
 export default function Page() {
   return (
-    <Search currentPage={1} postsPerPage={4} />
+    <AltSearch currentPage={1} postsPerPage={4} />
   )
 }
