@@ -2,7 +2,6 @@ import { allPosts } from 'contentlayer/generated'
 import PostCard from 'components/PostCard'
 import Pagination from 'components/Pagination'
 import AltPagination from 'components/AltPagination'
-import styles from 'styles/PaginatedPage.module.scss'
 
 type PageProps = {
   posts: typeof allPosts
@@ -12,24 +11,30 @@ type PageProps = {
   query: string
 }
 
-const PaginatedPage = ({posts, currentPage, postsPerPage, path, query = ''}: PageProps) => {
+const PaginatedPage = ({ posts, currentPage, postsPerPage, path, query = '' }: PageProps) => {
   const totalPosts = posts.length;
   const left = (currentPage - 1) * postsPerPage;
   const right = currentPage * postsPerPage < totalPosts ? currentPage * postsPerPage - 1 : totalPosts - 1;
   const items = posts.slice(left, right + 1);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.postcard}>
-      {items.map((item, idx) => (
-        <PostCard key={idx} {...item} />
-      ))}
+    <>
+      <section className="flex flex-row flex-wrap w-full py-6">
+        {items.map((item, idx) => {
+          return (
+            <PostCard key={idx} {...item} />
+          )
+        })}
+      </section>
+      <div className="flex">
+        {path === '/search/'
+          ?
+          <AltPagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
+          :
+          <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
+        }
       </div>
-      {path === '/search/' 
-        ? <AltPagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
-        : <Pagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />
-      }
-    </div>
+    </>
   )
 }
 

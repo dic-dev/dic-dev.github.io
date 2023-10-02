@@ -6,7 +6,6 @@ import styles from 'styles/Post.module.scss'
 const Post = (post: Post) => {
   return (
     <div className={styles.container}>
-      <PostInfo {...post} />
       <article className={styles.content}>
         <div className={styles.title}>
           <time dateTime={post.date}>
