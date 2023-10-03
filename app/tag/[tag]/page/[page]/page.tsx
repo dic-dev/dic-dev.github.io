@@ -1,8 +1,7 @@
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import PaginatedPage from 'components/PaginatedPage'
-import Side from 'components/Side'
-import PageInfo from 'components/tag/PageInfo'
+import ResultBar from 'components/ResultBar'
 
 export const generateStaticParams = async () => {
   const taggedPosts = allPosts.filter((post) => typeof post.tags !== 'undefined');
@@ -32,21 +31,10 @@ const Page = ({ params }: { params: { tag: string, page: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px]">
-      <main>
-        <div className="lg:hidden">
-          <PageInfo tag={params.tag} totalPosts={posts.length} />
-        </div>
-        <PaginatedPage posts={posts} currentPage={Number(params.page)} postsPerPage={postsPerPage} path={`/tag/${params.tag}/page/`} query="" />
-      </main>
-
-      <aside>
-        <div className="hidden lg:block">
-          <PageInfo tag={params.tag} totalPosts={posts.length} />
-        </div>
-        <Side />
-      </aside>
-    </div>
+    <>
+      <ResultBar totalPosts={posts.length} filter="Tag" value={params.tag} />
+      <PaginatedPage posts={posts} currentPage={Number(params.page)} postsPerPage={postsPerPage} path={`/tag/${params.tag}/page/`} query="" />
+    </>
   )
 }
 

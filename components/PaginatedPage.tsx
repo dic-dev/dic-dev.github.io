@@ -19,14 +19,14 @@ const PaginatedPage = ({ posts, currentPage, postsPerPage, path, query = '' }: P
 
   return (
     <>
-      <section className="flex flex-row flex-wrap w-full py-6">
+      <section className="flex flex-row flex-wrap w-full">
         {items.map((item, idx) => {
           return (
             <PostCard key={idx} {...item} />
           )
         })}
       </section>
-      <div className="flex">
+      <div className="flex pt-4 pb-8">
         {path === '/search/'
           ?
           <AltPagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />

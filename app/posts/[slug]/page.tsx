@@ -1,7 +1,5 @@
-import { compareDesc, format, parseISO } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import Side from 'components/Side'
-import PageInfo from 'components/post/PageInfo'
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
@@ -16,24 +14,17 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px]">
-      <main>
-        <article className="">
-          <div className="">
-            <time dateTime={post.date}>
-              {format(parseISO(post.date), 'yyyy/M/d')}
-            </time>
-            <h1>{post.title}</h1>
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
-        </article>
-      </main>
-
-      <aside>
-        <PageInfo post={post} />
-        <Side />
-      </aside>
-    </div>
+    <article className="p-4">
+      <div className="bg-white rounded shadow p-4">
+        <div className="">
+          <time dateTime={post.date}>
+            {format(parseISO(post.date), 'yyyy/M/d')}
+          </time>
+          <h1>{post.title}</h1>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      </div>
+    </article>
   )
 }
 

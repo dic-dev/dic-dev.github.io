@@ -5,10 +5,10 @@ import { Post } from 'contentlayer/generated'
 const PostCard = (post: Post) => {
   return (
     <div
-      className="transition-all duration-150 flex w-full px-6 py-6 md:w-1/2"
+      className="w-full px-4 py-4 md:w-1/2"
     >
       <div
-        className="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
+        className="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded shadow-lg hover:shadow-2xl"
       >
         <Link
           href={post.url}
@@ -17,7 +17,7 @@ const PostCard = (post: Post) => {
           <img
             src="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png"
             alt="Blog Cover"
-            className="object-fill w-full rounded-lg rounded-b-none md:h-56"
+            className="object-fill w-full rounded rounded-b-none md:h-56"
           />
         </Link>
         <div className="flex items-center justify-between px-4 py-2 overflow-hidden">

@@ -7,8 +7,7 @@ type PageInfoProps = {
 
 export default function PageInfo({ tag, totalPosts }: PageInfoProps) {
   return (
-    <>
-      <nav className="container mx-auto px-6 pt-12 space-y-12 w-full">
+      <nav className="px-6 pt-12 space-y-12 w-full">
         <div className="relative mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow-md rounded-xl dark:bg-gray-900 dark:text-gray-100">
           <div className="flex justify-center">
             <h2
@@ -31,7 +30,6 @@ export default function PageInfo({ tag, totalPosts }: PageInfoProps) {
           </div>
         </div>
       </nav>
-    </>
   )
 }
 

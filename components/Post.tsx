@@ -1,6 +1,5 @@
 import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
-import PostInfo from 'components/PostInfo'
 import styles from 'styles/Post.module.scss'
 
 const Post = (post: Post) => {

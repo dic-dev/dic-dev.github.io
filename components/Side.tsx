@@ -15,8 +15,8 @@ const Side = () => {
   tags = Array.from(new Set(tags));
 
   return (
-    <nav className="container mx-auto px-6 py-12 space-y-12 w-full">
-      <div className="mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow-md rounded-xl dark:bg-gray-900 dark:text-gray-100">
+    <aside className="mx-auto px-4 py-4 space-y-12 w-full">
+      <div className="mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
         <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
         <div className="space-y-4 text-center divide-y divide-gray-700">
           <div className="my-2 space-y-1">
@@ -93,7 +93,7 @@ const Side = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </aside>
   )
 }
 

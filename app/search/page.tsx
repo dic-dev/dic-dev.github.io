@@ -1,12 +1,11 @@
 'use client'
- 
+
 import { compareDesc } from 'date-fns'
 import { useSearchParams } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import PaginatedPage from 'components/PaginatedPage'
 import SearchIndex from 'components/SearchIndex'
-import Side from 'components/Side'
-import PageInfo from 'components/search/PageInfo'
+import ResultBar from 'components/ResultBar'
 
 export default function Page() {
   const searchParams = useSearchParams()
@@ -43,27 +42,16 @@ export default function Page() {
   const postsPerPage = 4
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px]">
+    <>
       {search === null &&
-      <SearchIndex />
+        <SearchIndex />
       }
       {search !== null &&
-      <>
-      <main>
-        <div className="lg:hidden">
-          <PageInfo keyword={search} totalPosts={posts.length} />
-        </div>
-        <PaginatedPage posts={posts} currentPage={Number(page)} postsPerPage={postsPerPage} path="/search/" query={query} />
-      </main>
-
-      <aside>
-        <div className="hidden lg:block">
-          <PageInfo keyword={search} totalPosts={posts.length} />
-        </div>
-        <Side />
-      </aside>
-      </>
+        <>
+          <ResultBar totalPosts={posts.length} filter="Keyword" value={search} />
+          <PaginatedPage posts={posts} currentPage={Number(page)} postsPerPage={postsPerPage} path="/search/" query={query} />
+        </>
       }
-    </div>
+    </>
   )
 }
