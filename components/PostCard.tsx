@@ -21,12 +21,17 @@ const PostCard = (post: Post) => {
           />
         </Link>
         <div className="flex items-center justify-between px-4 py-2 overflow-hidden">
-          <Link
-            href={`/category/${post.category}/`}
-            className="text-xs font-medium text-blue-600 uppercase"
-          >
-            {post.category}
-          </Link>
+          {typeof post.category !== 'undefined'
+            ?
+            <Link
+              href={`/category/${post.category}/`}
+              className="text-xs font-medium text-blue-600 uppercase"
+            >
+              {post.category}
+            </Link>
+            :
+            <span>Category undefined</span>
+          }
           <div className="flex flex-row items-center">
             <time
               dateTime={post.date}
