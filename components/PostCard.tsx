@@ -30,7 +30,7 @@ const PostCard = (post: Post) => {
               {post.category}
             </Link>
             :
-            <span>Category undefined</span>
+            <span className="text-xs">undefined</span>
           }
           <div className="flex flex-row items-center">
             <time
