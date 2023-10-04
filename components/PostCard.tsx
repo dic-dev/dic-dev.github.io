@@ -5,10 +5,10 @@ import { Post } from 'contentlayer/generated'
 const PostCard = (post: Post) => {
   return (
     <div
-      className="w-full px-4 py-4 md:w-1/2"
+      className="w-full px-4 py-4 lg:w-1/2"
     >
       <div
-        className="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded shadow-lg hover:shadow-2xl"
+        className="flex flex-col min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded shadow-lg hover:shadow-2xl"
       >
         <Link
           href={post.url}
@@ -37,7 +37,7 @@ const PostCard = (post: Post) => {
           </div>
         </div>
         <hr className="border-gray-300" />
-        <div className="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
+        <div className="flex flex-wrap items-center flex-1 px-4 text-center mx-auto">
           <Link href={post.url} className="hover:underline">
             <h2 className="text-2xl font-bold tracking-normal text-gray-800">
               {post.title}

@@ -1,9 +1,5 @@
 import { allPosts } from 'contentlayer/generated'
 import Link from 'next/link'
-import styles from 'styles/Side.module.scss'
-import { BiCategory } from 'react-icons/bi'
-import { BiTag } from 'react-icons/bi'
-import { ImProfile } from 'react-icons/im'
 
 const Side = () => {
   const categorizedPosts = allPosts.filter((post) => typeof post.category !== 'undefined' && post.category !== '');
@@ -15,8 +11,8 @@ const Side = () => {
   tags = Array.from(new Set(tags));
 
   return (
-    <aside className="mx-auto px-4 py-4 space-y-12 w-full">
-      <div className="mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
+    <aside className="mx-auto p-4 md:pl-0 lg:p-4 space-y-12 w-full">
+      <div className="mx-auto bg-white flex flex-col justify-center p-4 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
         <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
         <div className="space-y-4 text-center divide-y divide-gray-700">
           <div className="my-2 space-y-1">
