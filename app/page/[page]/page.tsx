@@ -1,6 +1,6 @@
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import PaginatedPage from 'components/PaginatedPage'
+import CardList from 'components/CardList'
 
 export const generateStaticParams = async () => {
   const totalPosts = allPosts.length;
@@ -17,7 +17,9 @@ const Page = ({ params }: { params: { page: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <PaginatedPage posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path="/page/" query="" />
+    <div className="bg-white rounded shadow m-4 p-6">
+      <CardList posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path="/page/" query="" />
+    </div>
   )
 }
 

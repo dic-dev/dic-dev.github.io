@@ -17,10 +17,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   return (
     <article className="p-4">
       <div className="bg-white rounded shadow p-6">
-        <div className="border-b border-b-gray-200 pb-6 mb-6 flex flex-col gap-3">
-          <h3 className="text-3xl font-semibold underline decoration-1">{post.title}</h3>
-
+        <div className="border-b border-b-gray-300 pb-6 mb-6 flex flex-col gap-3">
           <div className="flex flex-row justify-between">
+            <time dateTime={post.date}>
+              {format(parseISO(post.date), 'yyyy/M/d')}
+            </time>
+
             {typeof post.category !== 'undefined'
               ?
               <Link
@@ -36,11 +38,9 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                 undefined
               </span>
             }
-
-            <time dateTime={post.date}>
-              {format(parseISO(post.date), 'yyyy/M/d')}
-            </time>
           </div>
+
+          <h3 className="text-3xl font-semibold underline decoration-1">{post.title}</h3>
 
           <img
             src="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png"

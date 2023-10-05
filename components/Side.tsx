@@ -12,8 +12,11 @@ const Side = () => {
 
   return (
     <aside className="mx-auto p-4 md:pl-0 lg:p-4 space-y-12 w-full">
-      <div className="mx-auto bg-white flex flex-col justify-center p-4 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
-        <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+      <div className="mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
+        <img
+          src="https://source.unsplash.com/150x150/?portrait?3" alt=""
+          className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+        />
         <div className="space-y-4 text-center divide-y divide-gray-700">
           <div className="my-2 space-y-1">
             <h2 className="text-xl font-semibold sm:text-2xl">Daichi Yamaguchi</h2>
@@ -55,7 +58,7 @@ const Side = () => {
                     <Link
                       key={idx}
                       href={`/category/${category}/`}
-                      className="text-xs font-medium inline-block py-1 px-2 uppercase rounded text-orange-600 bg-orange-200"
+                      className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-purple-200"
                     >
                       {category}
                     </Link>
@@ -72,13 +75,13 @@ const Side = () => {
           </div>
           <div className="flex justify-center pt-4 space-x-4 align-center">
             {typeof tags !== 'undefined' &&
-              <div className="flex items-center flex-wrap gap-1">
+              <div className="flex justify-center items-center flex-wrap gap-1">
                 {tags.map((tag, idx) => {
                   return (
                     <Link
                       key={idx}
                       href={`/tag/${tag}/`}
-                      className="text-xs font-medium inline-block py-1 px-2 uppercase rounded text-blue-600 bg-blue-200"
+                      className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-sky-200"
                     >
                       {tag}
                     </Link>

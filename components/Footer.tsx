@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-4">
       <div className="w-full max-w-screen-xl mx-auto px-4">
-        <div className="bg-white rounded shadow dark:bg-gray-900 p-4 md:py-8">
+        <div className="bg-white rounded shadow dark:bg-gray-900 p-6">
           <div className="sm:flex sm:items-center sm:justify-between">
             <Link href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
               <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" />

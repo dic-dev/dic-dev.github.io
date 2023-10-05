@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import useFormPersist from 'react-hook-form-persist'
-import { useEffect } from 'react'
 
 type FormValues = { toggle: boolean, words: string }
 
@@ -40,7 +39,7 @@ const Navigation = () => {
   return (
     <>
       <nav className="bg-white border-gray-200 shadow dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-10 py-4">
           <a href="https://flowbite.com/" className="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -127,15 +126,15 @@ const Navigation = () => {
           >
             <div
               onClick={e => { e.stopPropagation(); }}
-              className="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] w-full"
+              className="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] w-full"
             >
               <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
-                <h3 className="font-bold text-gray-800 dark:text-white">
+                <h3 className="font-bold text-gray-900 dark:text-white">
                   Keyword Search
                 </h3>
                 <button type="button"
                   onClick={handleClose}
-                  className="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 text-sm dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 text-sm dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <span className="sr-only">Close</span>
                   <svg className="w-3.5 h-3.5" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,14 +158,6 @@ const Navigation = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
-                <button type="button" className="hs-dropdown-toggle py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
-                  Close
-                </button>
-                <a className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" href="#">
-                  Save changes
-                </a>
               </div>
             </div>
           </div>

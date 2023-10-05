@@ -1,7 +1,7 @@
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import PaginatedPage from 'components/PaginatedPage'
-import ResultBar from 'components/ResultBar'
+import Result from 'components/Result'
+import CardList from 'components/CardList'
 
 export const generateStaticParams = async () => {
   const taggedPosts = allPosts.filter((post) => typeof post.tags !== 'undefined');
@@ -31,10 +31,12 @@ const Page = ({ params }: { params: { tag: string, page: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <>
-      <ResultBar totalPosts={posts.length} filter="Tag" value={params.tag} />
-      <PaginatedPage posts={posts} currentPage={Number(params.page)} postsPerPage={postsPerPage} path={`/tag/${params.tag}/page/`} query="" />
-    </>
+    <div className="bg-white rounded shadow m-4 p-6">
+      <div className="border-b border-b-gray-300 pb-6 mb-6 px-4">
+        <Result totalPosts={posts.length} filter="Tag" value={params.tag} />
+      </div>
+      <CardList posts={posts} currentPage={Number(params.page)} postsPerPage={postsPerPage} path={`/tag/${params.tag}/page/`} query="" />
+    </div>
   )
 }
 

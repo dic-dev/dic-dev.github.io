@@ -1,11 +1,13 @@
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
-import PaginatedPage from 'components/PaginatedPage'
+import CardList from 'components/CardList'
 
 export default function Home() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
-    <PaginatedPage posts={posts} currentPage={1} postsPerPage={4} path="/page/" query="" />
+    <div className="bg-white rounded shadow m-4 p-6">
+      <CardList posts={posts} currentPage={1} postsPerPage={4} path="/page/" query="" />
+    </div>
   )
 }
