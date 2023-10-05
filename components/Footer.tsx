@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="sm:py-4 border-t border-t-gray-300 sm:border-t-transparent">
+    <footer className="sm:pt-4 sm:pb-8 border-t border-gray-300 sm:border-t-transparent">
       <div className="w-full max-w-screen-xl mx-auto sm:px-4">
-        <div className="bg-white sm:rounded sm:shadow dark:bg-gray-900 p-4 sm:p-6">
+        <div className="bg-white sm:rounded sm:shadow dark:bg-gray-900 px-4 py-8 sm:p-6">
           <div className="sm:flex sm:items-center sm:justify-between">
             <Link href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
               <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" />

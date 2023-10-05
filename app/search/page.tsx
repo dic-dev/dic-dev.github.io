@@ -47,7 +47,7 @@ export default function Page() {
         <SearchIndex />
       }
       {search !== null &&
-        <div className="bg-white sm:rounded sm:shadow sm:m-4 p-4 sm:p-6">
+        <div className="bg-white sm:rounded sm:shadow sm:m-4 px-4 py-8 sm:p-6">
           <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 sm:px-4">
             <Result totalPosts={posts.length} filter="Keyword" value={search} />
           </div>
