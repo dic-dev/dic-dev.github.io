@@ -11,8 +11,8 @@ const Side = () => {
   tags = Array.from(new Set(tags));
 
   return (
-    <aside className="mx-auto p-4 md:pl-0 lg:p-4 space-y-12 w-full">
-      <div className="mx-auto bg-white flex flex-col justify-center p-6 space-y-4 shadow rounded dark:bg-gray-900 dark:text-gray-100">
+    <aside className="mx-auto sm:p-4 md:pl-0 lg:p-4 space-y-12 w-full">
+      <div className="mx-auto bg-white flex flex-col justify-center p-4 sm:p-6 space-y-4 sm:shadow sm:rounded dark:bg-gray-900 dark:text-gray-100">
         <img
           src="https://source.unsplash.com/150x150/?portrait?3" alt=""
           className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"

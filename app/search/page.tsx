@@ -47,8 +47,8 @@ export default function Page() {
         <SearchIndex />
       }
       {search !== null &&
-        <div className="bg-white rounded shadow m-4 p-6">
-          <div className="border-b border-b-gray-300 pb-6 mb-6 px-4">
+        <div className="bg-white sm:rounded sm:shadow sm:m-4 p-4 sm:p-6">
+          <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 sm:px-4">
             <Result totalPosts={posts.length} filter="Keyword" value={search} />
           </div>
           <CardList posts={posts} currentPage={Number(page)} postsPerPage={postsPerPage} path="/search/" query={query} />

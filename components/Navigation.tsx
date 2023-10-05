@@ -38,8 +38,8 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="bg-white border-gray-200 shadow dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-10 py-4">
+      <nav className="bg-white border-b sm:border-b-transparent border-gray-300 sm:shadow dark:bg-gray-900">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-10 py-4">
           <a href="https://flowbite.com/" className="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>

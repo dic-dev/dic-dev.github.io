@@ -18,8 +18,8 @@ const Page = ({ params }: { params: { category: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <div className="bg-white rounded shadow m-4 p-6">
-      <div className="border-b border-b-gray-300 pb-6 mb-6 px-4">
+    <div className="bg-white sm:rounded sm:shadow sm:m-4 p-4 sm:p-6">
+      <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 sm:px-4">
         <Result totalPosts={posts.length} filter="Category" value={params.category} />
       </div>
       <CardList posts={posts} currentPage={1} postsPerPage={postsPerPage} path={`/category/${params.category}/page/`} query="" />

@@ -5,7 +5,7 @@ import { Post } from 'contentlayer/generated'
 const Card = (post: Post) => {
   return (
     <>
-      <div className="border-b border-b-gray-300 pb-6 mb-6 flex flex-col gap-3">
+      <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 flex flex-col gap-3">
         <div className="flex flex-row justify-between">
           <time dateTime={post.date}>
             {format(parseISO(post.date), 'yyyy/M/d')}

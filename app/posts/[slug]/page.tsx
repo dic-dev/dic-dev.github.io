@@ -15,9 +15,9 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
   return (
-    <article className="p-4">
-      <div className="bg-white rounded shadow p-6">
-        <div className="border-b border-b-gray-300 pb-6 mb-6 flex flex-col gap-3">
+    <article className="sm:p-4">
+      <div className="bg-white sm:rounded sm:shadow p-4 sm:p-6">
+        <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 flex flex-col gap-3">
           <div className="flex flex-row justify-between">
             <time dateTime={post.date}>
               {format(parseISO(post.date), 'yyyy/M/d')}
