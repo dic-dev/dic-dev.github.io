@@ -190,7 +190,7 @@ const Navigation = () => {
           </nav>
 
           <div>
-            <p className="text-center text-gray-700 font-medium">Close</p>
+            <p className="py-10 text-center text-gray-700 font-medium">Close</p>
           </div>
 
           <div onClick={e => { e.stopPropagation(); }}>
