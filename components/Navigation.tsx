@@ -29,12 +29,10 @@ const Navigation = () => {
 
   const searchOpen = () => {
     setValue('searchToggle', true)
-    document.body.style.overflow = 'hidden'
   }
 
   const searchClose = () => {
     setValue('searchToggle', false)
-    document.body.style.overflow = 'auto'
   }
 
   const menuOpen = () => {
@@ -57,29 +55,29 @@ const Navigation = () => {
           </a>
 
           <div className="hidden w-full md:block md:w-auto">
-            <ul className="font-medium flex items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
               <li>
-                <Link href="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
+                <Link href="/" className="block text-gray-900 rounded dark:text-white" aria-current="page">Home</Link>
               </li>
 
               <li>
-                <Link href="/about" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+                <Link href="/about" className="block text-gray-900 rounded hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</Link>
               </li>
 
               <li>
-                <Link href="/link" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Link</Link>
+                <Link href="/link" className="block text-gray-900 rounded hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Link</Link>
               </li>
 
               <li>
-                <button type="button" onClick={searchOpen} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Search</button>
+                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded hover:bg-transparent hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Search</button>
               </li>
             </ul>
           </div>
 
           <div className="block md:hidden md:w-auto">
-            <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800">
               <li>
-                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Search</button>
+                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">Search</button>
               </li>
 
               <li>
@@ -88,20 +86,7 @@ const Navigation = () => {
                     display: menuToggle ? "none" : "block"
                   }}
                   onClick={menuOpen}
-                  className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                  aria-controls="mobile-menu-2" aria-expanded="false"
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-                  <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                </button>
-
-                <button type="button"
-                  style={{
-                    display: menuToggle ? "block" : "none"
-                  }}
-                  onClick={menuClose}
-                  className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  className="inline-flex items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700"
                   aria-controls="mobile-menu-2" aria-expanded="false"
                 >
                   <span className="sr-only">Open main menu</span>
@@ -158,7 +143,7 @@ const Navigation = () => {
         style={{
           display: menuToggle ? "block" : "none"
         }}
-        className="fixed top-0 left-0 z-20 w-full h-full bg-sky-200"
+        className="modal fixed top-0 left-0 z-20 w-full h-full bg-sky-300"
       >
         <nav className="border-b sm:border-b-transparent border-gray-300 dark:bg-gray-900">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-10 py-4">
@@ -172,23 +157,10 @@ const Navigation = () => {
                 <li>
                   <button type="button"
                     style={{
-                      display: menuToggle ? "none" : "block"
-                    }}
-                    onClick={menuOpen}
-                    className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="mobile-menu-2" aria-expanded="false"
-                  >
-                    <span className="sr-only">Open main menu</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-                    <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                  </button>
-
-                  <button type="button"
-                    style={{
                       display: menuToggle ? "block" : "none"
                     }}
                     onClick={menuClose}
-                    className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    className="inline-flex items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="mobile-menu-2" aria-expanded="false"
                   >
                     <span className="sr-only">Open main menu</span>
@@ -201,24 +173,18 @@ const Navigation = () => {
           </div>
         </nav>
 
-        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+        <ul className="flex flex-col items-center mx-auto px-4 pt-4 w-full font-medium text-center">
+          <li className="w-full">
+            <Link href="/" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
           </li>
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+          <li className="w-full">
+            <Link href="/about" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
           </li>
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
+          <li className="w-full">
+            <Link href="/link" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Link</Link>
           </li>
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
-          </li>
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
-          </li>
-          <li>
-            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          <li className="w-full">
+            <Link href="/contact" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
           </li>
         </ul>
       </div>

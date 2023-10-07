@@ -47,7 +47,7 @@ body {
   overflow: auto;
 }
 
-div {
+.modal {
   overflow: auto;
   scrollbar-gutter: stable;
 }
