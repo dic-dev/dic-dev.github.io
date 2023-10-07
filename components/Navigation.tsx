@@ -143,51 +143,62 @@ const Navigation = () => {
         style={{
           display: menuToggle ? "block" : "none"
         }}
-        className="modal fixed top-0 left-0 z-20 w-full h-full bg-sky-300"
+        className="modal fixed top-0 left-0 z-20 w-full h-full bg-gray-300"
       >
-        <nav className="border-b sm:border-b-transparent border-gray-300 dark:bg-gray-900">
-          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-10 py-4">
-            <a href="https://flowbite.com/" className="flex items-center">
-              <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-            </a>
+        <div onClick={menuClose} className="h-full flex flex-col justify-between">
+          <nav onClick={e => { e.stopPropagation(); }} className="border-b sm:border-b-transparent border-gray-300 dark:bg-gray-900">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-10 py-4">
+              <a href="https://flowbite.com/" className="flex items-center">
+                <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
+                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+              </a>
 
-            <div className="block md:w-auto">
-              <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <button type="button"
-                    style={{
-                      display: menuToggle ? "block" : "none"
-                    }}
-                    onClick={menuClose}
-                    className="inline-flex items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="mobile-menu-2" aria-expanded="false"
-                  >
-                    <span className="sr-only">Open main menu</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-                    <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                  </button>
-                </li>
-              </ul>
+              <div className="block md:w-auto">
+                <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li>
+                    <button type="button"
+                      style={{
+                        display: menuToggle ? "block" : "none"
+                      }}
+                      onClick={menuClose}
+                      className="inline-flex items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                      aria-controls="mobile-menu-2" aria-expanded="false"
+                    >
+                      <span className="sr-only">Open main menu</span>
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                      <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
 
-        <ul className="flex flex-col items-center mx-auto px-4 pt-4 w-full font-medium text-center">
-          <li className="w-full">
-            <Link href="/" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
-          </li>
-          <li className="w-full">
-            <Link href="/about" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
-          </li>
-          <li className="w-full">
-            <Link href="/link" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Link</Link>
-          </li>
-          <li className="w-full">
-            <Link href="/contact" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-sky-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
-          </li>
-        </ul>
+            <ul className="flex flex-col items-center mx-auto px-4 pt-4 w-full font-medium text-center">
+              <li className="w-full">
+                <Link href="/" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
+              </li>
+              <li className="w-full">
+                <Link href="/about" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
+              </li>
+              <li className="w-full">
+                <Link href="/link" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Link</Link>
+              </li>
+              <li className="w-full">
+                <Link href="/contact" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div>
+            <p className="text-center text-gray-700 font-medium">Close</p>
+          </div>
+
+          <div onClick={e => { e.stopPropagation(); }}>
+            <p className="block py-4 text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="https://flowbite.com/" className="hover:underline">dic-dev</Link>. All Rights Reserved.</p>
+          </div>
+        </div>
       </div>
+
 
 
       <form
