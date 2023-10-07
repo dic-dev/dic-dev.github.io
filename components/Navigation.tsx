@@ -6,17 +6,16 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import useFormPersist from 'react-hook-form-persist'
 
-type FormValues = { toggle: boolean, words: string }
+type FormValues = { menuToggle: boolean, searchToggle: boolean, words: string }
 
 const Navigation = () => {
   const { watch, register, handleSubmit, setValue } = useForm<FormValues>()
-  const toggle = watch('toggle', false)
+  const menuToggle = watch('menuToggle', false)
+  const searchToggle = watch('searchToggle', false)
 
-  useFormPersist("storageKey", {
+  useFormPersist("form", {
     watch,
     setValue,
-    // storage: window.localStorage, // default window.sessionStorage
-    // exclude: ['checkbox']
   });
 
   const router = useRouter()
@@ -24,16 +23,28 @@ const Navigation = () => {
   const onSubmit = (data: FormValues) => {
     const str = data.words.trim().split(/\s+/).join('+')
     const url = `/search?q=${str}`
-    setValue('toggle', false)
+    setValue('searchToggle', false)
     router.push(url)
   }
 
-  const handleClose = () => {
-    setValue('toggle', false)
+  const searchOpen = () => {
+    setValue('searchToggle', true)
+    document.body.style.overflow = 'hidden'
   }
 
-  const handleOpen = () => {
-    setValue('toggle', true)
+  const searchClose = () => {
+    setValue('searchToggle', false)
+    document.body.style.overflow = 'auto'
+  }
+
+  const menuOpen = () => {
+    setValue('menuToggle', true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const menuClose = () => {
+    setValue('menuToggle', false)
+    document.body.style.overflow = 'auto'
   }
 
   return (
@@ -45,8 +56,8 @@ const Navigation = () => {
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
           </a>
 
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <div className="hidden w-full md:block md:w-auto">
+            <ul className="font-medium flex items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <Link href="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
               </li>
@@ -60,7 +71,43 @@ const Navigation = () => {
               </li>
 
               <li>
-                <button type="button" onClick={handleOpen} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Search</button>
+                <button type="button" onClick={searchOpen} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Search</button>
+              </li>
+            </ul>
+          </div>
+
+          <div className="block md:hidden md:w-auto">
+            <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Search</button>
+              </li>
+
+              <li>
+                <button type="button"
+                  style={{
+                    display: menuToggle ? "none" : "block"
+                  }}
+                  onClick={menuOpen}
+                  className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  aria-controls="mobile-menu-2" aria-expanded="false"
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                  <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                </button>
+
+                <button type="button"
+                  style={{
+                    display: menuToggle ? "block" : "none"
+                  }}
+                  onClick={menuClose}
+                  className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  aria-controls="mobile-menu-2" aria-expanded="false"
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                  <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                </button>
               </li>
             </ul>
           </div>
@@ -69,7 +116,7 @@ const Navigation = () => {
       </nav>
 
 
-      <div className="md:hidden fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+      <div className="hidden md:hidden fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
           <Link href="/" className="inline-flex flex-col items-center justify-center px-5 rounded-l-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
             <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -96,7 +143,7 @@ const Navigation = () => {
 
           <button type="button"
             className="inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
-            onClick={handleOpen}
+            onClick={searchOpen}
           >
             <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
               <path d="M16.5 16.5L13.1667 13.1667M13.1667 7.33333C13.1667 10.555 10.555 13.1667 7.33333 13.1667C4.11167 13.1667 1.5 10.555 1.5 7.33333C1.5 4.11167 4.11167 1.5 7.33333 1.5C10.555 1.5 13.1667 4.11167 13.1667 7.33333Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -107,17 +154,86 @@ const Navigation = () => {
         </div>
       </div>
 
+      <div
+        style={{
+          display: menuToggle ? "block" : "none"
+        }}
+        className="fixed top-0 left-0 z-20 w-full h-full bg-sky-200"
+      >
+        <nav className="border-b sm:border-b-transparent border-gray-300 dark:bg-gray-900">
+          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-10 py-4">
+            <a href="https://flowbite.com/" className="flex items-center">
+              <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            </a>
+
+            <div className="block md:w-auto">
+              <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                  <button type="button"
+                    style={{
+                      display: menuToggle ? "none" : "block"
+                    }}
+                    onClick={menuOpen}
+                    className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="mobile-menu-2" aria-expanded="false"
+                  >
+                    <span className="sr-only">Open main menu</span>
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                    <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                  </button>
+
+                  <button type="button"
+                    style={{
+                      display: menuToggle ? "block" : "none"
+                    }}
+                    onClick={menuClose}
+                    className="inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="mobile-menu-2" aria-expanded="false"
+                  >
+                    <span className="sr-only">Open main menu</span>
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                    <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+          </li>
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
+          </li>
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
+          </li>
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+          </li>
+          <li>
+            <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          </li>
+        </ul>
+      </div>
+
 
       <form
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input id="checkbox" type="checkbox" {...register('toggle')}
+        <input id="checkbox" type="checkbox" {...register('searchToggle')}
           className="hidden"
         />
 
-        <div onClick={handleClose}
+        <div onClick={searchClose}
           style={{
-            display: toggle ? "block" : "none"
+            display: searchToggle ? "block" : "none"
           }}
           className="w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto bg-overlay"
         >
@@ -133,7 +249,7 @@ const Navigation = () => {
                   Keyword Search
                 </h3>
                 <button type="button"
-                  onClick={handleClose}
+                  onClick={searchClose}
                   className="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-900 text-sm dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <span className="sr-only">Close</span>
