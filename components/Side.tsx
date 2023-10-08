@@ -11,9 +11,9 @@ const Side = () => {
   tags = Array.from(new Set(tags));
 
   return (
-    <aside className="mx-auto sm:p-4 md:pl-0 lg:p-4 space-y-12 w-full border-t border-gray-300 sm:border-t-transparent">
-      <div className="mx-auto bg-white flex flex-col justify-center p-4 sm:px-6 sm:py-0 sm:shadow sm:rounded dark:bg-gray-900 dark:text-gray-100">
-        <div className="space-y-3 py-4 sm:py-6">
+    <aside className="mx-auto md:p-4 space-y-12 w-full border-t border-gray-300 md:border-t-transparent">
+      <div className="mx-auto bg-white flex flex-col justify-center px-4 py-6 sm:px-6 md:py-0 md:shadow md:rounded dark:bg-gray-900 dark:text-gray-100">
+        <div className="space-y-3 py-6">
           <h3 className="font-semibold text-center text-xl underline decoration-1">Blog Aurthor</h3>
           <img
             src="https://source.unsplash.com/150x150/?portrait?3" alt=""
@@ -53,7 +53,7 @@ const Side = () => {
 
         <hr className="border-1 border-gray-300" />
 
-        <div className="space-y-3 py-4 sm:py-6">
+        <div className="space-y-3 py-6">
           <h3 className="font-semibold text-center text-xl underline decoration-1">Categories</h3>
           <div className="flex justify-center align-center">
             {typeof categories !== 'undefined' &&
@@ -76,7 +76,7 @@ const Side = () => {
 
         <hr className="border-1 border-gray-300" />
 
-        <div className="space-y-3 py-4 sm:py-6">
+        <div className="space-y-3 py-6">
           <h3 className="font-semibold text-center text-xl underline decoration-1">Tags</h3>
           <div className="flex justify-center align-center">
             {typeof tags !== 'undefined' &&
