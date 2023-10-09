@@ -11,10 +11,10 @@ const Thumbnail = (post: Post) => {
 
   return (
     <ul className="flex justify-around items-center p-4">
-      <li className="mr-4">
+      <li className="">
         <img src={path1} alt="thumbnail1" className="" />
       </li>
-      <li className="hidden sm:block">
+      <li className="ml-4 hidden sm:block">
         <img src={path2} alt="thumbnail2" className="" />
       </li>
     </ul>

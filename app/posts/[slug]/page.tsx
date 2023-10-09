@@ -74,7 +74,10 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
             </div>
           }
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+          className="text-base"
+        />
       </div>
     </article>
   )

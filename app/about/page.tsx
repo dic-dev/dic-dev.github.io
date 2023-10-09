@@ -6,16 +6,16 @@ export default function Home() {
         <div>
           <h3>私について</h3>
           <p>
-            熊本生まれの30歳。フリーター・派遣を転々とした後、現在は埼玉県在住で都内のIT系企業に勤務予定（2社目）。<br />
-            勉強、日常の記録を残していけたらと思いこのブログを作りました。<br/>
-            生暖かい目で読んで頂ければと思います！
+            熊本県八代市生まれの30歳。引きこもり・アルバイト・派遣を転々とした後、現在は埼玉県在住で都内のIT系企業に勤務予定（2社目）。<br />
+            現状Next.js（React）が好きですが、Svelte.js等に目移りする今日この頃。<br/>
+            勉強や日常の記録を残していけたらと思いこのブログを作りました。<br/>
+            生暖かい目で見て読んでくださいね！
           </p>
         </div>
         <div>
           <h3>このサイトについて</h3>
           <p>
-            Next.js, Contentlayer, TailwindCSS製です。Github Pagesにデプロイされています（0円構成最高かよ）。<br />
-
+            このブログはNext.js, Contentlayer, TailwindCSSで構築し、Github Pagesにデプロイしています（0円構成最高です）。<br />
           </p>
           <ul>
             <li>Privacy Policy(準備中)</li>

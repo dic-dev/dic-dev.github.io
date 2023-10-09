@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
 
           <div className="pt-4 flex justify-center items-center sm:hidden">
-            <ul className="pt-4 flex flex-wrap gap-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+            <ul className="w-full px-8 pt-4 flex flex-wrap justify-between text-sm font-medium text-gray-500 dark:text-gray-400">
               <li>
                 <Link href="/" className="hover:underline md:mr-6 ">Home</Link>
               </li>

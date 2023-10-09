@@ -22,8 +22,8 @@ const Side = () => {
 
           <div className="space-y-3 text-center">
             <div className="space-y-1">
-              <h2 className="text-xl font-semibold sm:text-2xl">Daichi Yamaguchi</h2>
-              <p className="px-5 text-xs sm:text-base dark:text-gray-400">Full-stack developer</p>
+              <h2 className="text-xl font-semibold">Daichi Yamaguchi</h2>
+              <p className="px-5 text-base dark:text-gray-400">Full-stack developer</p>
             </div>
 
             <div className="px-3 mx-auto w-max flex justify-center align-center border-t border-gray-900">

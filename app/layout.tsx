@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-white md:bg-gray-100`}>
         <Navigation />
         <div className="pt-4 max-w-7xl min-h-screen mx-auto grid grid-cols-1 md:grid-cols-[1fr_260px] lg:grid-cols-[1fr_350px]">
-          <main>
+          <main className="min-h-screen">
             {children}
           </main>
           <Side />
