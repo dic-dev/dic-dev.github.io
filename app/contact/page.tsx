@@ -23,8 +23,8 @@ export default function Page() {
         id="iframe"
         scrolling="no"
         frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
+        marginHeight={0}
+        marginWidth={0}
         style={{ width: "100%" }}
       >
         読み込んでいます…
