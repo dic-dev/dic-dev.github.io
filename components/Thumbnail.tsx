@@ -10,7 +10,7 @@ const Thumbnail = (post: Post) => {
   }
 
   return (
-    <ul className="flex justify-around items-center p-4">
+    <ul className="bg-gray-100 flex justify-around items-center p-8">
       <li className="">
         <img src={path1} alt="thumbnail1" className="" />
       </li>

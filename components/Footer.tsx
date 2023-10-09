@@ -11,26 +11,29 @@ const Footer = () => {
               <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
             </Link>
-            <ul className="hidden sm:flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400">
+            <ul className="hidden sm:flex flex-wrap items-center text-base font-medium text-gray-700 dark:text-gray-400">
               <li>
-                <Link href="/" className="mr-4 hover:underline md:mr-6 ">Home</Link>
+                <Link href="/" className="mr-6 hover:underline">Home</Link>
               </li>
               <li>
-                <Link href="/about" className="mr-4 hover:underline md:mr-6 ">About</Link>
+                <Link href="/about" className="mr-6 hover:underline">About</Link>
               </li>
               <li>
-                <Link href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</Link>
+                <Link href="#" className="mr-6 hover:underline">Link</Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">Contact</Link>
+                <Link href="/contact" className="mr-6 hover:underline">Contact</Link>
+              </li>
+              <li>
+                <Link href="#" className="mr-6 hover:underline">Privacy Policy</Link>
               </li>
             </ul>
           </div>
 
           <div className="pt-4 flex justify-center items-center sm:hidden">
-            <ul className="w-full px-8 pt-4 flex flex-wrap justify-between text-sm font-medium text-gray-500 dark:text-gray-400">
+            <ul className="w-full px-8 pt-4 flex flex-wrap justify-between text-base font-medium text-gray-700 dark:text-gray-400">
               <li>
-                <Link href="/" className="hover:underline md:mr-6 ">Home</Link>
+                <Link href="/" className="hover:underline">Home</Link>
               </li>
               <li>
                 <Link href="/about" className="hover:underline">About</Link>
@@ -39,7 +42,7 @@ const Footer = () => {
                 <Link href="#" className="hover:underline">Link</Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">Contact</Link>
+                <Link href="/contact" className="hover:underline">Contact</Link>
               </li>
               <li>
                 <Link href="#" className="hover:underline">Privacy Policy</Link>

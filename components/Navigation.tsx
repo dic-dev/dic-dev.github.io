@@ -59,21 +59,21 @@ const Navigation = () => {
           </a>
 
           <div className="hidden w-full md:block md:w-auto">
-            <ul className="font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
+            <ul className="text-gray-700 font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
               <li>
-                <Link href="/" className="block text-gray-900 rounded dark:text-white" aria-current="page">Home</Link>
+                <Link href="/" className="block rounded hover:underline dark:text-white" aria-current="page">Home</Link>
               </li>
 
               <li>
-                <Link href="/about" className="block text-gray-900 rounded hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</Link>
+                <Link href="/about" className="block rounded hover:underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</Link>
               </li>
 
               <li>
-                <Link href="/link" className="block text-gray-900 rounded hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Link</Link>
+                <Link href="/link" className="block rounded hover:underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Link</Link>
               </li>
 
               <li>
-                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded hover:bg-transparent hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Search</button>
+                <button type="button" onClick={searchOpen} className="block rounded hover:underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Search</button>
               </li>
             </ul>
           </div>
@@ -219,14 +219,14 @@ const Navigation = () => {
           className="w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto bg-overlay"
         >
           <div
-            className="sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex justify-center items-center"
+            className="sm:max-w-xl sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex justify-center items-center"
           >
             <div
               onClick={e => { e.stopPropagation(); }}
-              className="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] w-full"
+              className="max-h-full overflow-hidden flex flex-col bg-gray-100 border shadow-sm rounded dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] w-full"
             >
-              <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
-                <h3 className="font-bold text-gray-900 dark:text-white">
+              <div className="flex justify-between items-center px-4 pt-4 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Keyword Search
                 </h3>
                 <button type="button"
@@ -242,11 +242,11 @@ const Navigation = () => {
               <div className="p-4 overflow-y-auto">
                 <div className="space-y-4">
                   <div>
-                    <div className="relative w-full">
+                    <div className="relative w-full rounded-lg shadow-sm">
                       <input {...register('words', { required: true })} placeholder="Search..." type="search"
-                        className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                        className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                       />
-                      <button type="submit" className="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      <button type="submit" className="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-blue-600 rounded-r-lg border border-blue-600 hover:bg-blue-500 hover:border-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>

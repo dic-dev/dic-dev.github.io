@@ -1,6 +1,7 @@
 import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import Link from 'next/link'
+import Thumbnail from 'components/Thumbnail'
 import Category from 'icons/Category'
 import Tag from 'icons/Tag'
 import Time from 'icons/Time'
@@ -49,13 +50,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
 
-          <h3 className="text-3xl font-semibold underline decoration-1">{post.title}</h3>
-
-          <img
-            src="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png"
-            alt="Blog Cover"
-            className="object-fill w-full rounded rounded-b-none md:h-56 shadow-sm"
-          />
+          <Link href={post.url}
+            className="bg-gray-100 p-4"
+          >
+            <h3 className="text-2xl font-semibold pl-4 border-l-8 border-l-blue-500">{post.title}</h3>
+            <Thumbnail {...post} />
+          </Link>
 
           {typeof post.tags !== 'undefined' &&
             <div className="flex justify-end items-center flex-wrap gap-1">

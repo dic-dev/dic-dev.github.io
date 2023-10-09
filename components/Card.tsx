@@ -40,12 +40,17 @@ const Card = (post: Post) => {
           </div>
         </div>
 
-        <Link href={post.url}>
-          <h3 className="text-3xl font-semibold underline decoration-1">{post.title}</h3>
-        </Link>
-
-        <Link href={post.url}>
+        <Link href={post.url}
+          className="bg-gray-100 p-4"
+        >
+          <h3 className="text-2xl font-semibold pl-4 border-l-8 border-l-blue-500">{post.title}</h3>
           <Thumbnail {...post} />
+          {typeof post.description !== 'undefined' &&
+            <div
+              dangerouslySetInnerHTML={{ __html: post.description.html }}
+              className="text-base line-clamp-3"
+            />
+          }
         </Link>
 
         {typeof post.tags !== 'undefined' &&
