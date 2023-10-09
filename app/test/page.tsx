@@ -1,5 +1,6 @@
 import { compareDesc } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
+
 import Hamburger from 'icons/Hamburger'
 import Close from 'icons/Close'
 import Tag from 'icons/Tag'
@@ -8,6 +9,7 @@ import Search from 'icons/Search'
 import LinkIcon from 'icons/Link'
 import Home from 'icons/Home'
 import Info from 'icons/Info'
+import Thumbnail from 'components/Thumbnail'
 
 export default function Page() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -24,6 +26,11 @@ export default function Page() {
         <LinkIcon />
         <Home />
         <Info />
+        {posts.map((post, idx) => {
+          return (
+            <Thumbnail key={idx} {...post} />
+          )
+        })}
       </div>
     </div>
   )

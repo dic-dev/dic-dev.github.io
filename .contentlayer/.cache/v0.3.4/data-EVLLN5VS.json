@@ -4,7 +4,7 @@
       "document": {
         "title": "My First Post",
         "date": "2023-08-30T00:00:00.000Z",
-        "category": "IT",
+        "category": "it",
         "tags": [
           "linux",
           "pc"
@@ -28,7 +28,7 @@
         "type": "Post",
         "url": "/posts/post-01"
       },
-      "documentHash": "1694130167676",
+      "documentHash": "1696811517895",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -36,7 +36,7 @@
       "document": {
         "title": "My First Post",
         "date": "2023-08-30T00:00:00.000Z",
-        "category": "IT",
+        "category": "it",
         "tags": [
           "ubuntu",
           "docker",
@@ -61,7 +61,7 @@
         "type": "Post",
         "url": "/posts/post-02"
       },
-      "documentHash": "1694112684292",
+      "documentHash": "1696811529032",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -87,7 +87,7 @@
         "type": "Post",
         "url": "/posts/post-03"
       },
-      "documentHash": "1693725193792",
+      "documentHash": "1696811533116",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -118,7 +118,7 @@
       "document": {
         "title": "My First Post",
         "date": "2023-08-30T00:00:00.000Z",
-        "category": "IT",
+        "category": "it",
         "body": {
           "raw": "\n# Hello World\n\n",
           "html": "<h1>Hello World</h1>"
@@ -134,7 +134,7 @@
         "type": "Post",
         "url": "/posts/post-05"
       },
-      "documentHash": "1693688618303",
+      "documentHash": "1696811543716",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -157,7 +157,7 @@
         "type": "Post",
         "url": "/posts/post-06"
       },
-      "documentHash": "1693474655405",
+      "documentHash": "1696811550909",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -211,6 +211,7 @@
       "document": {
         "title": "My First Post",
         "date": "2023-08-30T00:00:00.000Z",
+        "category": "life",
         "body": {
           "raw": "\n# Hello World\n\n",
           "html": "<h1>Hello World</h1>"
@@ -226,7 +227,7 @@
         "type": "Post",
         "url": "/posts/post-09"
       },
-      "documentHash": "1693474705336",
+      "documentHash": "1696810756058",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },

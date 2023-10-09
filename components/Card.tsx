@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
 
+import Thumbnail from 'components/Thumbnail'
+
 import Category from 'icons/Category'
 import Tag from 'icons/Tag'
 import Time from 'icons/Time'
@@ -43,11 +45,7 @@ const Card = (post: Post) => {
         </Link>
 
         <Link href={post.url}>
-          <img
-            src="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png"
-            alt="Blog Cover"
-            className="object-fill w-full rounded rounded-b-none md:h-56 shadow-sm"
-          />
+          <Thumbnail {...post} />
         </Link>
 
         {typeof post.tags !== 'undefined' &&

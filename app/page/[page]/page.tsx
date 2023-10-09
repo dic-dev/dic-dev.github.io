@@ -17,7 +17,7 @@ const Page = ({ params }: { params: { page: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <div className="bg-white md:rounded md:shadow md:m-4 px-4 pt-2 pb-6 md:p-6">
+    <div className="bg-white md:rounded md:shadow md:m-4 px-4 pt-2 pb-12 md:p-6">
       <CardList posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path="/page/" query="" />
     </div>
   )
