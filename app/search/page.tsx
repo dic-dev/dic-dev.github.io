@@ -3,7 +3,6 @@
 import { compareDesc } from 'date-fns'
 import { useSearchParams } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
-import SearchIndex from 'components/SearchIndex'
 import Result from 'components/Result'
 import CardList from 'components/CardList'
 
@@ -43,9 +42,6 @@ export default function Page() {
 
   return (
     <>
-      {search === null &&
-        <SearchIndex />
-      }
       {search !== null &&
         <div className="bg-white md:rounded md:shadow md:m-4 px-4 sm:px-6 pt-2 pb-12 md:p-6">
           <div className="border-b border-b-gray-300 pb-4 mb-4">

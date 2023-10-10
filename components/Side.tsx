@@ -16,12 +16,12 @@ const Side = () => {
   tags = Array.from(new Set(tags));
 
   return (
-    <aside className="mx-auto md:p-4 space-y-12 w-full border-t border-gray-300 md:border-t-transparent">
+    <aside className="mx-auto md:pr-4 md:py-4 lg:p-4 space-y-12 w-full border-t border-gray-300 md:border-t-transparent">
       <div className="mx-auto bg-white flex flex-col justify-center px-4 py-6 sm:px-6 md:pb-0 md:shadow md:rounded dark:bg-gray-900 dark:text-gray-100">
         <div className="space-y-4">
           <h3 className="font-semibold text-center text-xl underline decoration-1">Blog Aurthor</h3>
           <img
-            src="https://source.unsplash.com/150x150/?portrait?3" alt=""
+            src="/images/fail.jpg" alt="profile"
             className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
           />
 
@@ -29,8 +29,8 @@ const Side = () => {
             <div className="pb-4 space-y-1">
               <h2 className="text-xl font-semibold">Daichi Yamaguchi</h2>
               <p className="px-5 text-base dark:text-gray-400">
-                Junior developer<br />
-                From Kumamoto, now live in Saitama, Japan
+                熊本出身。30歳独身。<br/>
+                現在は埼玉県に潜む引きこもりの日々のアウトプット。<br />
               </p>
             </div>
 

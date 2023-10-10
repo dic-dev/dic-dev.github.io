@@ -52,14 +52,13 @@ const Navigation = () => {
   return (
     <>
       <nav className="bg-white shadow dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 md:px-10 py-4">
-          <a href="https://flowbite.com/" className="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-          </a>
+        <div className="max-w-screen-xl md:h-28 flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 md:px-10 py-4">
+          <Link href="/" className="flex items-center">
+            <span className="self-center text-2xl md:text-4xl font-semibold whitespace-nowrap dark:text-white">DY Blog (*´∀｀)</span>
+          </Link>
 
           <div className="hidden w-full md:block md:w-auto">
-            <ul className="text-gray-700 font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
+            <ul className="text-lg text-gray-700 font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
               <li>
                 <Link href="/" className="block rounded hover:underline dark:text-white" aria-current="page">Home</Link>
               </li>
@@ -69,7 +68,7 @@ const Navigation = () => {
               </li>
 
               <li>
-                <Link href="/link" className="block rounded hover:underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Link</Link>
+                <Link href="/works" className="block rounded hover:underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Works (準備中)</Link>
               </li>
 
               <li>
@@ -81,22 +80,24 @@ const Navigation = () => {
           <div className="block md:hidden md:w-auto">
             <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800">
               <li>
-                <button type="button" onClick={searchOpen} className="block text-gray-900 rounded dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
-                  <Search />
+                <button type="button" onClick={searchOpen} className="flex justify-center items-center text-gray-900 rounded dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
+                  <Search
+                    size={30}
+                    className="fill-gray-700"
+                  />
                 </button>
               </li>
 
               <li>
                 <button type="button"
-                  style={{
-                    display: menuToggle ? "none" : "block"
-                  }}
                   onClick={menuOpen}
-                  className="inline-flex items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex justify-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700"
                   aria-controls="mobile-menu-2" aria-expanded="false"
                 >
                   <span className="sr-only">Open main menu</span>
-                  <Hamburger />
+                  <Hamburger
+                    className="fill-gray-700"
+                  />
                 </button>
               </li>
             </ul>
@@ -104,45 +105,6 @@ const Navigation = () => {
 
         </div>
       </nav>
-
-
-      <div className="hidden md:hidden fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
-        <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
-          <Link href="/" className="inline-flex flex-col items-center justify-center px-5 rounded-l-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-            </svg>
-            <span className="sr-only">Home</span>
-          </Link>
-
-          <button type="button" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path d="M8 9H10V14M8 14H12M9.4079 5.5H9.4179M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-
-              <path d="M9.99992 2.08337C8.43415 2.08337 6.90355 2.54768 5.60166 3.41757C4.29977 4.28747 3.28507 5.52388 2.68588 6.97046C2.08668 8.41705 1.92991 10.0088 2.23537 11.5445C2.54084 13.0802 3.29483 14.4908 4.40199 15.598C5.50916 16.7051 6.91977 17.4591 8.45546 17.7646C9.99114 18.0701 11.5829 17.9133 13.0295 17.3141C14.4761 16.7149 15.7125 15.7002 16.5824 14.3983C17.4523 13.0964 17.9166 11.5658 17.9166 10C17.9142 7.90115 17.0793 5.88893 15.5952 4.40479C14.111 2.92065 12.0988 2.0858 9.99992 2.08337ZM9.58326 5.00004C9.83048 5.00004 10.0722 5.07335 10.2777 5.2107C10.4833 5.34806 10.6435 5.54328 10.7381 5.77169C10.8327 6.00009 10.8575 6.25143 10.8092 6.4939C10.761 6.73638 10.642 6.95911 10.4671 7.13392C10.2923 7.30874 10.0696 7.42779 9.82712 7.47602C9.58464 7.52425 9.33331 7.4995 9.1049 7.40489C8.87649 7.31028 8.68127 7.15006 8.54392 6.9445C8.40657 6.73894 8.33326 6.49727 8.33326 6.25004C8.33326 5.91852 8.46495 5.60058 8.69937 5.36616C8.93379 5.13174 9.25173 5.00004 9.58326 5.00004ZM11.6666 14.1667H8.33326C8.11224 14.1667 7.90028 14.0789 7.744 13.9226C7.58772 13.7663 7.49992 13.5544 7.49992 13.3334C7.49992 13.1124 7.58772 12.9004 7.744 12.7441C7.90028 12.5878 8.11224 12.5 8.33326 12.5H9.16659V10H8.33326C8.11224 10 7.90028 9.91224 7.744 9.75596C7.58772 9.59968 7.49992 9.38772 7.49992 9.16671C7.49992 8.94569 7.58772 8.73373 7.744 8.57745C7.90028 8.42117 8.11224 8.33337 8.33326 8.33337H9.99992C10.2209 8.33337 10.4329 8.42117 10.5892 8.57745C10.7455 8.73373 10.8333 8.94569 10.8333 9.16671V12.5H11.6666C11.8876 12.5 12.0996 12.5878 12.2558 12.7441C12.4121 12.9004 12.4999 13.1124 12.4999 13.3334C12.4999 13.5544 12.4121 13.7663 12.2558 13.9226C12.0996 14.0789 11.8876 14.1667 11.6666 14.1667Z" />
-            </svg>
-            <span className="sr-only">About</span>
-          </button>
-
-          <button type="button" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
-              <path d="M11.0129 7.96195C10.353 7.3025 9.45831 6.93207 8.52541 6.93207C7.59251 6.93207 6.69778 7.3025 6.03791 7.96195L2.48391 11.516C1.82422 12.1757 1.45361 13.0705 1.45361 14.0035C1.45361 14.9364 1.82422 15.8312 2.48391 16.4909C3.14378 17.1504 4.03851 17.5208 4.97141 17.5208C5.90431 17.5208 6.79903 17.1504 7.45891 16.4909L7.91991 16.03M7.45891 11.516C8.11865 12.1756 9.01343 12.5462 9.94641 12.5462C10.8794 12.5462 11.7742 12.1756 12.4339 11.516L15.9869 7.96195C16.6466 7.30221 17.0172 6.40743 17.0172 5.47445C17.0172 4.54147 16.6466 3.64669 15.9869 2.98695C15.3272 2.32757 14.4326 1.95715 13.4999 1.95715C12.5672 1.95715 11.6726 2.32757 11.0129 2.98695L10.2999 3.69995" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span className="sr-only">Link</span>
-          </button>
-
-          <button type="button"
-            className="inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
-            onClick={searchOpen}
-          >
-            <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-              <path d="M16.5 16.5L13.1667 13.1667M13.1667 7.33333C13.1667 10.555 10.555 13.1667 7.33333 13.1667C4.11167 13.1667 1.5 10.555 1.5 7.33333C1.5 4.11167 4.11167 1.5 7.33333 1.5C10.555 1.5 13.1667 4.11167 13.1667 7.33333Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span className="sr-only">Search</span>
-          </button>
-
-        </div>
-      </div>
 
       <div
         style={{
@@ -155,8 +117,7 @@ const Navigation = () => {
             <div className="w-full">
               <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 md:px-10 py-4">
                 <a href="https://flowbite.com/" className="flex items-center">
-                  <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="logo" />
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DY Blog (*´∀｀)</span>
                 </a>
 
                 <div className="block md:w-auto">
@@ -164,11 +125,13 @@ const Navigation = () => {
                     <li>
                       <button type="button"
                         onClick={menuClose}
-                        className="block items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        className="flex justify-center items-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-controls="mobile-menu-2" aria-expanded="false"
                       >
                         <span className="sr-only">Open main menu</span>
-                        <Close />
+                        <Close
+                          className="fill-gray-700"
+                        />
                       </button>
                     </li>
                   </ul>
@@ -176,7 +139,7 @@ const Navigation = () => {
               </div>
             </div>
 
-            <ul className="flex flex-col items-center mx-auto px-4 pt-4 w-full font-medium text-center">
+            <ul className="flex flex-col items-center mx-auto px-4 pt-6 pb-6 w-full font-medium text-center">
               <li className="w-full">
                 <Link href="/" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
               </li>
@@ -184,7 +147,7 @@ const Navigation = () => {
                 <Link href="/about" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
               </li>
               <li className="w-full">
-                <Link href="/link" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Link</Link>
+                <Link href="/works" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Works (準備中)</Link>
               </li>
               <li className="w-full">
                 <Link href="/contact" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
@@ -192,13 +155,16 @@ const Navigation = () => {
             </ul>
           </nav>
 
-          <div className="flex flex-row justify-center items-center">
-            <Close />
+          <div className="flex flex-row justify-center items-center gap-1">
+            <Close
+              size={13}
+              className="fill-gray-700"
+            />
             <p className="py-10 text-center text-gray-700 font-medium">Close</p>
           </div>
 
           <div onClick={e => { e.stopPropagation(); }}>
-            <p className="block py-4 text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="https://flowbite.com/" className="hover:underline">dic-dev</Link>. All Rights Reserved.</p>
+            <p className="block py-6 text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="https://flowbite.com/" className="hover:underline">dic-dev</Link>. All Rights Reserved.</p>
           </div>
         </div>
       </div>

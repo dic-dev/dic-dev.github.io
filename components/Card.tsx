@@ -11,17 +11,23 @@ import Time from 'icons/Time'
 const Card = (post: Post) => {
   return (
     <>
-      <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 sm:mb-6 flex flex-col gap-3">
+      <div className="border-b border-b-gray-300 pb-4 sm:pb-6 mb-4 flex flex-col gap-4">
         <div className="flex flex-row justify-between">
           <div className="flex flex-row items-center gap-1">
-            <Time />
+            <Time
+              size={30}
+              className="fill-gray-900"
+            />
             <time dateTime={post.date}>
               {format(parseISO(post.date), 'yyyy/M/d')}
             </time>
           </div>
 
           <div className="flex flex-row items-center gap-1">
-            <Category />
+            <Category
+              size={30}
+              className="fill-gray-900"
+            />
             {typeof post.category !== 'undefined'
               ?
               <Link
@@ -43,7 +49,7 @@ const Card = (post: Post) => {
         <Link href={post.url}
           className="bg-gray-100 p-4"
         >
-          <h3 className="text-2xl font-semibold pl-4 border-l-8 border-l-blue-500">{post.title}</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold underline decoration-1">{post.title}</h3>
           <Thumbnail {...post} />
           {typeof post.description !== 'undefined' &&
             <div
@@ -55,7 +61,10 @@ const Card = (post: Post) => {
 
         {typeof post.tags !== 'undefined' &&
           <div className="flex justify-end items-center flex-wrap gap-1">
-            <Tag />
+            <Tag
+              size={30}
+              className="fill-gray-900"
+            />
             {post.tags.map((tag, idx) => {
               return (
                 <Link

@@ -44,7 +44,7 @@ const SearchPagination = ({ posts, currentPage, postsPerPage, path, query = '' }
   const lastPage = Math.ceil(totalPosts / postsPerPage);
   const rangeWithDots = pagination(currentPage, lastPage);
   return (
-    <nav className="mx-auto isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+    <nav className="mx-auto isolate inline-flex -space-x-px rounded-md" aria-label="Pagination">
       {currentPage === 1
         ?
         <span className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300">

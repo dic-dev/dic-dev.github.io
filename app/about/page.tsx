@@ -4,7 +4,7 @@ export default function Home() {
     <div className="bg-white md:rounded md:shadow md:m-4 px-4 sm:px-6 pt-2 pb-12 md:p-6">
       <div className="text-base text-gray-900 space-y-6">
         <div className="space-y-3">
-          <h3 className="text-xl font-medium pl-4 border-l-8 border-l-blue-500">
+          <h3 className="text-xl font-semibold pl-4 border-l-8 border-l-blue-500">
             私について
           </h3>
           <p>
@@ -20,9 +20,9 @@ export default function Home() {
         <hr className="border-gray-300" />
 
         <div className="space-y-3">
-          <h3 className="text-xl font-medium pl-4 border-l-8 border-l-blue-500">このサイトについて</h3>
+          <h3 className="text-xl font-semibold pl-4 border-l-8 border-l-blue-500">このサイトについて</h3>
           <p>
-            このブログはNext.js, Contentlayer, TailwindCSSで構築し、Github Pagesにデプロイしています（0円構成最高か）。<br />
+            このブログはNext.js, Contentlayer, TailwindCSSで構築し、Github Pagesにデプロイしています（0円構成最高）。<br />
           </p>
           <ul>
             <li>Privacy Policy(準備中)</li>
@@ -32,7 +32,7 @@ export default function Home() {
         <hr className="border-gray-300" />
 
         <div className="space-y-3">
-          <h3 className="text-xl font-medium pl-4 border-l-8 border-l-blue-500">お問い合わせ</h3>
+          <h3 className="text-xl font-semibold pl-4 border-l-8 border-l-blue-500">お問い合わせ</h3>
           <p>
             ブログへのお問い合わせは
             <a

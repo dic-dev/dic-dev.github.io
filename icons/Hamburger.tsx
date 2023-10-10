@@ -2,14 +2,21 @@ import * as React from "react"
 const SvgComponent = (props: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
+    xmlSpace="preserve"
+    id="_x32_"
+    x={0}
+    y={0}
+    width={props.size || 24}
+    height={props.size || 24}
     style={{
-      fill: "#000",
+      opacity: 1,
     }}
+    viewBox="0 0 512 512"
     {...props}
   >
-    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+    <path
+      d="M0 16h512v80H0zM0 216.008h512v79.984H0zM0 416h512v80H0z"
+    />
   </svg>
 )
 export default SvgComponent

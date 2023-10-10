@@ -26,7 +26,7 @@ const CardList = ({ posts, currentPage, postsPerPage, path, query = '' }: PagePr
           )
         })}
       </div>
-      <div className="flex">
+      <div className="flex pt-2">
         {path === '/search/'
           ?
           <AltPagination posts={posts} currentPage={currentPage} postsPerPage={postsPerPage} path={path} query={query} />

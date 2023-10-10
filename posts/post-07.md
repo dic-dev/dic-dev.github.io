@@ -1,6 +1,6 @@
 ---
 type: Post
-title: My First Post
+title: Test post
 date: 2023-08-30
 ---
 
