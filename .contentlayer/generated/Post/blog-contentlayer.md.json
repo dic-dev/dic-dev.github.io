@@ -1,0 +1,27 @@
+{
+  "title": "Next.jsとContentlayerを使ってブログを作った。",
+  "date": "2023-10-11T00:00:00.000Z",
+  "category": "it",
+  "tags": [
+    "next.js",
+    "contentlayer"
+  ],
+  "description": {
+    "raw": "Next.jsとContentlayerを使ってブログを作った。 日常のアウトプットとしてブログを作りたい！<br/> Contentlayerという代物を使ってこのブログを作った。<br/> 基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。",
+    "html": "<p>Next.jsとContentlayerを使ってブログを作った。 日常のアウトプットとしてブログを作りたい！ Contentlayerという代物を使ってこのブログを作った。 基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。</p>"
+  },
+  "body": {
+    "raw": "# Next.jsとContentlayerを使ってブログを作った。\n日常のアウトプットとしてブログを作りたい！<br/>\nContentlayerという代物を使ってこのブログを作った。<br/>\n基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。\n\n## 経緯\nWordPressでさくっと作ろうと思っていましたが、<br/>\n* たまたま覗いた技術ブログがSSG(Static Site Generation)で表示の速さに感動した。\n* Markdownでブログを書きたかった。\n* 私個人の小規模ブログなのでDBも管理画面も不要、Gitで管理できればよい。\n* お金をかけずにVercelやGithub Pagesにデプロイしたい。\n\nといった理由から他の方法を模索。調べてみるとNext.jsとContentlayerという代物で比較的簡単に実現できそうだったのでトライ。\n\n## Contentlayer\nMarkdown形式のcontentを扱う際に便利なツール。SDK。\nビルド時にmdファイルからjson dataを生成。アプリケーションからは</br>\n\n```import { allPosts } from \"contentlayer/generated\"```\n\nとして読み込んで使う。これだけ。後は煮るなり焼くなりする。</br>\nタグやカテゴリでフィルターしたり、検索機能つけたりetc。\n\n## Next.jsとSSG\nNext.jsは13のApp Routerで使用。</br>\n元よりディレクトリの階層がそのままルーティングになるためルーティングのための設定もファイルも特に要らない。</br>\nDynamic Routesも便利で至れり尽くせり(信者です)。<br/>\ngenerateStaticParams(getStaticPaths, getStaticProps)でビルド時に静的にルートを生成してあげるのがSSGで使うときのポイント(?)。\n\n## 感想\nNext.jsは神。<br/>\nまた気が向いたときにちゃんと書く。\n",
+    "html": "<h1>Next.jsとContentlayerを使ってブログを作った。</h1>\n<p>日常のアウトプットとしてブログを作りたい！\nContentlayerという代物を使ってこのブログを作った。\n基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。</p>\n<h2>経緯</h2>\n<p>WordPressでさくっと作ろうと思っていましたが、</p>\n<ul>\n<li>たまたま覗いた技術ブログがSSG(Static Site Generation)で表示の速さに感動した。</li>\n<li>Markdownでブログを書きたかった。</li>\n<li>私個人の小規模ブログなのでDBも管理画面も不要、Gitで管理できればよい。</li>\n<li>お金をかけずにVercelやGithub Pagesにデプロイしたい。</li>\n</ul>\n<p>といった理由から他の方法を模索。調べてみるとNext.jsとContentlayerという代物で比較的簡単に実現できそうだったのでトライ。</p>\n<h2>Contentlayer</h2>\n<p>Markdown形式のcontentを扱う際に便利なツール。SDK。\nビルド時にmdファイルからjson dataを生成。アプリケーションからは</p>\n<p><code>import { allPosts } from \"contentlayer/generated\"</code></p>\n<p>として読み込んで使う。これだけ。後は煮るなり焼くなりする。\nタグやカテゴリでフィルターしたり、検索機能つけたりetc。</p>\n<h2>Next.jsとSSG</h2>\n<p>Next.jsは13のApp Routerで使用。\n元よりディレクトリの階層がそのままルーティングになるためルーティングのための設定もファイルも特に要らない。\nDynamic Routesも便利で至れり尽くせり(信者です)。\ngenerateStaticParams(getStaticPaths, getStaticProps)でビルド時に静的にルートを生成してあげるのがSSGで使うときのポイント(?)。</p>\n<h2>感想</h2>\n<p>Next.jsは神。\nまた気が向いたときにちゃんと書く。</p>"
+  },
+  "_id": "blog-contentlayer.md",
+  "_raw": {
+    "sourceFilePath": "blog-contentlayer.md",
+    "sourceFileName": "blog-contentlayer.md",
+    "sourceFileDir": ".",
+    "contentType": "markdown",
+    "flattenedPath": "blog-contentlayer"
+  },
+  "type": "Post",
+  "url": "/posts/blog-contentlayer"
+}

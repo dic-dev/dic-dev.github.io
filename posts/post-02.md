@@ -1,8 +1,8 @@
 ---
 type: Post
-title: Test post
+title: Test
 date: 2023-08-30
-category: it
+category: life
 tags:
   - ubuntu
   - docker
@@ -11,12 +11,8 @@ tags:
   - php
   - react
   - mysql
-description: description
-  ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+  - go
+description: test post
 ---
-# あいうえお
-かきくけこ
-## あいうえお
-さしすせそ
-### あいうえお
-たちつてと
+# test
+test

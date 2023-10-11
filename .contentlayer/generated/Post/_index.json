@@ -1,35 +1,35 @@
 [
   {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
+    "title": "Next.jsとContentlayerを使ってブログを作った。",
+    "date": "2023-10-11T00:00:00.000Z",
     "category": "it",
     "tags": [
-      "linux",
-      "pc"
+      "next.js",
+      "contentlayer"
     ],
     "description": {
-      "raw": "description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ",
-      "html": "<p>description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>"
+      "raw": "Next.jsとContentlayerを使ってブログを作った。 日常のアウトプットとしてブログを作りたい！<br/> Contentlayerという代物を使ってこのブログを作った。<br/> 基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。",
+      "html": "<p>Next.jsとContentlayerを使ってブログを作った。 日常のアウトプットとしてブログを作りたい！ Contentlayerという代物を使ってこのブログを作った。 基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。</p>"
     },
     "body": {
-      "raw": "# あいうえお\nかきくけこ\n## あいうえお\nさしすせそ\n### あいうえお\nたちつてと\n",
-      "html": "<h1>あいうえお</h1>\n<p>かきくけこ</p>\n<h2>あいうえお</h2>\n<p>さしすせそ</p>\n<h3>あいうえお</h3>\n<p>たちつてと</p>"
+      "raw": "# Next.jsとContentlayerを使ってブログを作った。\n日常のアウトプットとしてブログを作りたい！<br/>\nContentlayerという代物を使ってこのブログを作った。<br/>\n基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。\n\n## 経緯\nWordPressでさくっと作ろうと思っていましたが、<br/>\n* たまたま覗いた技術ブログがSSG(Static Site Generation)で表示の速さに感動した。\n* Markdownでブログを書きたかった。\n* 私個人の小規模ブログなのでDBも管理画面も不要、Gitで管理できればよい。\n* お金をかけずにVercelやGithub Pagesにデプロイしたい。\n\nといった理由から他の方法を模索。調べてみるとNext.jsとContentlayerという代物で比較的簡単に実現できそうだったのでトライ。\n\n## Contentlayer\nMarkdown形式のcontentを扱う際に便利なツール。SDK。\nビルド時にmdファイルからjson dataを生成。アプリケーションからは</br>\n\n```import { allPosts } from \"contentlayer/generated\"```\n\nとして読み込んで使う。これだけ。後は煮るなり焼くなりする。</br>\nタグやカテゴリでフィルターしたり、検索機能つけたりetc。\n\n## Next.jsとSSG\nNext.jsは13のApp Routerで使用。</br>\n元よりディレクトリの階層がそのままルーティングになるためルーティングのための設定もファイルも特に要らない。</br>\nDynamic Routesも便利で至れり尽くせり(信者です)。<br/>\ngenerateStaticParams(getStaticPaths, getStaticProps)でビルド時に静的にルートを生成してあげるのがSSGで使うときのポイント(?)。\n\n## 感想\nNext.jsは神。<br/>\nまた気が向いたときにちゃんと書く。\n",
+      "html": "<h1>Next.jsとContentlayerを使ってブログを作った。</h1>\n<p>日常のアウトプットとしてブログを作りたい！\nContentlayerという代物を使ってこのブログを作った。\n基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。</p>\n<h2>経緯</h2>\n<p>WordPressでさくっと作ろうと思っていましたが、</p>\n<ul>\n<li>たまたま覗いた技術ブログがSSG(Static Site Generation)で表示の速さに感動した。</li>\n<li>Markdownでブログを書きたかった。</li>\n<li>私個人の小規模ブログなのでDBも管理画面も不要、Gitで管理できればよい。</li>\n<li>お金をかけずにVercelやGithub Pagesにデプロイしたい。</li>\n</ul>\n<p>といった理由から他の方法を模索。調べてみるとNext.jsとContentlayerという代物で比較的簡単に実現できそうだったのでトライ。</p>\n<h2>Contentlayer</h2>\n<p>Markdown形式のcontentを扱う際に便利なツール。SDK。\nビルド時にmdファイルからjson dataを生成。アプリケーションからは</p>\n<p><code>import { allPosts } from \"contentlayer/generated\"</code></p>\n<p>として読み込んで使う。これだけ。後は煮るなり焼くなりする。\nタグやカテゴリでフィルターしたり、検索機能つけたりetc。</p>\n<h2>Next.jsとSSG</h2>\n<p>Next.jsは13のApp Routerで使用。\n元よりディレクトリの階層がそのままルーティングになるためルーティングのための設定もファイルも特に要らない。\nDynamic Routesも便利で至れり尽くせり(信者です)。\ngenerateStaticParams(getStaticPaths, getStaticProps)でビルド時に静的にルートを生成してあげるのがSSGで使うときのポイント(?)。</p>\n<h2>感想</h2>\n<p>Next.jsは神。\nまた気が向いたときにちゃんと書く。</p>"
     },
-    "_id": "post-01.md",
+    "_id": "blog-contentlayer.md",
     "_raw": {
-      "sourceFilePath": "post-01.md",
-      "sourceFileName": "post-01.md",
+      "sourceFilePath": "blog-contentlayer.md",
+      "sourceFileName": "blog-contentlayer.md",
       "sourceFileDir": ".",
       "contentType": "markdown",
-      "flattenedPath": "post-01"
+      "flattenedPath": "blog-contentlayer"
     },
     "type": "Post",
-    "url": "/posts/post-01"
+    "url": "/posts/blog-contentlayer"
   },
   {
-    "title": "Test post",
+    "title": "Test",
     "date": "2023-08-30T00:00:00.000Z",
-    "category": "it",
+    "category": "life",
     "tags": [
       "ubuntu",
       "docker",
@@ -37,15 +37,16 @@
       "pc",
       "php",
       "react",
-      "mysql"
+      "mysql",
+      "go"
     ],
     "description": {
-      "raw": "description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ",
-      "html": "<p>description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>"
+      "raw": "test post",
+      "html": "<p>test post</p>"
     },
     "body": {
-      "raw": "# あいうえお\nかきくけこ\n## あいうえお\nさしすせそ\n### あいうえお\nたちつてと\n",
-      "html": "<h1>あいうえお</h1>\n<p>かきくけこ</p>\n<h2>あいうえお</h2>\n<p>さしすせそ</p>\n<h3>あいうえお</h3>\n<p>たちつてと</p>"
+      "raw": "# test\ntest\n",
+      "html": "<h1>test</h1>\n<p>test</p>"
     },
     "_id": "post-02.md",
     "_raw": {
@@ -57,202 +58,5 @@
     },
     "type": "Post",
     "url": "/posts/post-02"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "it",
-    "tags": [
-      "ubuntu",
-      "linux",
-      "pc",
-      "php",
-      "react"
-    ],
-    "description": {
-      "raw": "description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ",
-      "html": "<p>description ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>"
-    },
-    "body": {
-      "raw": "# あいうえお\nかきくけこ\n## あいうえお\nさしすせそ\n### あいうえお\nたちつてと\n",
-      "html": "<h1>あいうえお</h1>\n<p>かきくけこ</p>\n<h2>あいうえお</h2>\n<p>さしすせそ</p>\n<h3>あいうえお</h3>\n<p>たちつてと</p>"
-    },
-    "_id": "post-03.md",
-    "_raw": {
-      "sourceFilePath": "post-03.md",
-      "sourceFileName": "post-03.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-03"
-    },
-    "type": "Post",
-    "url": "/posts/post-03"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "it",
-    "tags": [
-      "ubuntu",
-      "docker",
-      "linux",
-      "pc",
-      "php",
-      "react",
-      "mysql"
-    ],
-    "body": {
-      "raw": "\n# test\nあｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ\n\nadfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas\n\n# test\nasfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk\n",
-      "html": "<h1>test</h1>\n<p>あｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ</p>\n<p>adfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas</p>\n<h1>test</h1>\n<p>asfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk</p>"
-    },
-    "_id": "post-04.md",
-    "_raw": {
-      "sourceFilePath": "post-04.md",
-      "sourceFileName": "post-04.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-04"
-    },
-    "type": "Post",
-    "url": "/posts/post-04"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "it",
-    "body": {
-      "raw": "\n# Hello World\n\n",
-      "html": "<h1>Hello World</h1>"
-    },
-    "_id": "post-05.md",
-    "_raw": {
-      "sourceFilePath": "post-05.md",
-      "sourceFileName": "post-05.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-05"
-    },
-    "type": "Post",
-    "url": "/posts/post-05"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "body": {
-      "raw": "\n# Hello World\n\n",
-      "html": "<h1>Hello World</h1>"
-    },
-    "_id": "post-06.md",
-    "_raw": {
-      "sourceFilePath": "post-06.md",
-      "sourceFileName": "post-06.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-06"
-    },
-    "type": "Post",
-    "url": "/posts/post-06"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "body": {
-      "raw": "\n# Hello World\n\n",
-      "html": "<h1>Hello World</h1>"
-    },
-    "_id": "post-07.md",
-    "_raw": {
-      "sourceFilePath": "post-07.md",
-      "sourceFileName": "post-07.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-07"
-    },
-    "type": "Post",
-    "url": "/posts/post-07"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "body": {
-      "raw": "\n# Hello World\n\n",
-      "html": "<h1>Hello World</h1>"
-    },
-    "_id": "post-08.md",
-    "_raw": {
-      "sourceFilePath": "post-08.md",
-      "sourceFileName": "post-08.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-08"
-    },
-    "type": "Post",
-    "url": "/posts/post-08"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "life",
-    "tags": [
-      "cooking"
-    ],
-    "body": {
-      "raw": "\n# Hello World\nasfasfsafasf\n# test\nあｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ\n\nadfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas\n\n# test\nasfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk\n\n",
-      "html": "<h1>Hello World</h1>\n<p>asfasfsafasf</p>\n<h1>test</h1>\n<p>あｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ</p>\n<p>adfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas</p>\n<h1>test</h1>\n<p>asfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk</p>"
-    },
-    "_id": "post-09.md",
-    "_raw": {
-      "sourceFilePath": "post-09.md",
-      "sourceFileName": "post-09.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-09"
-    },
-    "type": "Post",
-    "url": "/posts/post-09"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "life",
-    "tags": [
-      "money"
-    ],
-    "body": {
-      "raw": "\n# Hello World\nasfasfsafasf\n# test\nあｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ\n\nadfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas\n\n# test\nasfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk\n",
-      "html": "<h1>Hello World</h1>\n<p>asfasfsafasf</p>\n<h1>test</h1>\n<p>あｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ</p>\n<p>adfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas</p>\n<h1>test</h1>\n<p>asfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk</p>"
-    },
-    "_id": "post-10.md",
-    "_raw": {
-      "sourceFilePath": "post-10.md",
-      "sourceFileName": "post-10.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-10"
-    },
-    "type": "Post",
-    "url": "/posts/post-10"
-  },
-  {
-    "title": "Test post",
-    "date": "2023-08-30T00:00:00.000Z",
-    "category": "life",
-    "tags": [
-      "trip"
-    ],
-    "body": {
-      "raw": "\n# Hello World\nasfasfsafasf\n# test\nあｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ\n\nadfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas\n\n# test\nasfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk\n",
-      "html": "<h1>Hello World</h1>\n<p>asfasfsafasf</p>\n<h1>test</h1>\n<p>あｄふぁｓふぁ\nあｓふぁｓふぁｓあｓｆ\nあｆさふぁｓふぁｓふぁｓ</p>\n<p>adfasfas\nasfasfas\nfdsfasf\nasfasfasasf\nasfasfasasfsaf\nasfasfas</p>\n<h1>test</h1>\n<p>asfasfasasfsafsaf\nasfasfasasfsafsaffas\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nasfasfasasfsafsaf\nk</p>"
-    },
-    "_id": "post-11.md",
-    "_raw": {
-      "sourceFilePath": "post-11.md",
-      "sourceFileName": "post-11.md",
-      "sourceFileDir": ".",
-      "contentType": "markdown",
-      "flattenedPath": "post-11"
-    },
-    "type": "Post",
-    "url": "/posts/post-11"
   }
 ]

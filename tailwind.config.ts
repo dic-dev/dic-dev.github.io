@@ -15,7 +15,8 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'overlay': 'rgba(0, 0, 0, 0.4)',
+        'overlay': 'rgba(0, 0, 0, 0.3)',
+        'searchOverlay': 'rgba(0, 0, 0, 0.3)',
       },
     },
   },

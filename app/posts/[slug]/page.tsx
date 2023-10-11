@@ -1,3 +1,4 @@
+import 'github-markdown-css'
 import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import Link from 'next/link'
@@ -25,7 +26,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
           <div className="flex flex-row justify-between">
             <div className="flex flex-row items-center gap-1">
               <Time
-                size={30}
+                size={22}
                 className="fill-gray-900"
               />
               <time dateTime={post.date}>
@@ -35,20 +36,20 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
             <div className="flex flex-row items-center gap-1">
               <Category
-                size={30}
+                size={22}
                 className="fill-gray-900"
               />
               {typeof post.category !== 'undefined'
                 ?
                 <Link
                   href={`/category/${post.category}/`}
-                  className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-purple-200 shadow-sm"
+                  className="text-sm font-medium inline-block py-1 px-3 uppercase rounded-full text-gray-900 bg-blue-200 shadow-sm hover:underline decoration-1"
                 >
                   {post.category}
                 </Link>
                 :
                 <span
-                  className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-purple-200 shadow-sm"
+                  className="text-sm font-medium inline-block py-1 px-3 uppercase rounded-full text-gray-900 bg-blue-200 shadow-sm"
                 >
                   undefined
                 </span>
@@ -66,7 +67,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
           {typeof post.tags !== 'undefined' &&
             <div className="flex justify-end items-center flex-wrap gap-1">
               <Tag
-                size={30}
+                size={22}
                 className="fill-gray-900"
               />
               {post.tags.map((tag, idx) => {
@@ -74,7 +75,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                   <Link
                     key={idx}
                     href={`/tag/${tag}/`}
-                    className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-sky-200 shadow-sm"
+                    className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-sky-200 shadow-sm hover:underline decoration-1"
                   >
                     {tag}
                   </Link>
@@ -85,7 +86,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.body.html }}
-          className="text-base"
+          className="markdown-body list-disc list-inside text-base"
         />
       </div>
     </article>

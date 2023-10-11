@@ -1,0 +1,45 @@
+---
+type: Post
+title: Next.jsとContentlayerを使ってブログを作った。
+date: 2023-10-11
+category: it
+tags:
+  - next.js
+  - contentlayer
+description:   Next.jsとContentlayerを使ってブログを作った。
+  日常のアウトプットとしてブログを作りたい！<br/>
+  Contentlayerという代物を使ってこのブログを作った。<br/>
+  基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。
+---
+# Next.jsとContentlayerを使ってブログを作った。
+日常のアウトプットとしてブログを作りたい！<br/>
+Contentlayerという代物を使ってこのブログを作った。<br/>
+基本的にこちら（ https://contentlayer.dev/docs/getting-started-cddd76b7 ）の手順通りにやるだけなのでやり方についてはここではフォーカスしません。
+
+## 経緯
+WordPressでさくっと作ろうと思っていましたが、<br/>
+* たまたま覗いた技術ブログがSSG(Static Site Generation)で表示の速さに感動した。
+* Markdownでブログを書きたかった。
+* 私個人の小規模ブログなのでDBも管理画面も不要、Gitで管理できればよい。
+* お金をかけずにVercelやGithub Pagesにデプロイしたい。
+
+といった理由から他の方法を模索。調べてみるとNext.jsとContentlayerという代物で比較的簡単に実現できそうだったのでトライ。
+
+## Contentlayer
+Markdown形式のcontentを扱う際に便利なツール。SDK。
+ビルド時にmdファイルからjson dataを生成。アプリケーションからは</br>
+
+```import { allPosts } from "contentlayer/generated"```
+
+として読み込んで使う。これだけ。後は煮るなり焼くなりする。</br>
+タグやカテゴリでフィルターしたり、検索機能つけたりetc。
+
+## Next.jsとSSG
+Next.jsは13のApp Routerで使用。</br>
+元よりディレクトリの階層がそのままルーティングになるためルーティングのための設定もファイルも特に要らない。</br>
+Dynamic Routesも便利で至れり尽くせり(信者です)。<br/>
+generateStaticParams(getStaticPaths, getStaticProps)でビルド時に静的にルートを生成してあげるのがSSGで使うときのポイント(?)。
+
+## 感想
+Next.jsは神。<br/>
+また気が向いたときにちゃんと書く。

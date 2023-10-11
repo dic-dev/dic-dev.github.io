@@ -64,7 +64,7 @@ const Side = () => {
                     <Link
                       key={idx}
                       href={`/category/${category}/`}
-                      className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-purple-200"
+                      className="text-sm font-medium inline-block py-1 px-3 uppercase rounded-full text-gray-900 bg-blue-200 hover:underline decoration-1"
                     >
                       {category}
                     </Link>
@@ -87,7 +87,7 @@ const Side = () => {
                     <Link
                       key={idx}
                       href={`/tag/${tag}/`}
-                      className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-sky-200"
+                      className="text-sm font-medium inline-block py-1 px-2 uppercase rounded text-gray-900 bg-sky-200 hover:underline decoration-1"
                     >
                       {tag}
                     </Link>
