@@ -18,8 +18,8 @@ export type Post = {
   category?: string | undefined
   tags?: string[] | undefined
   description?: Markdown | undefined
-  /** Markdown file body */
-  body: Markdown
+  /** MDX file body */
+  body: MDX
   url: string
 }  
 

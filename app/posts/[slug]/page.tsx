@@ -1,6 +1,8 @@
 import 'github-markdown-css'
 import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Thumbnail from 'components/Thumbnail'
 import Category from 'icons/Category'
@@ -11,13 +13,14 @@ export const generateStaticParams = async () => allPosts.map((post) => ({ slug: 
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+  if (!post) notFound()
   return { title: post.title }
 }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+  if (!post) notFound()
+  const MDXContent = useMDXComponent(post.body.code)
 
   return (
     <article className="pt-2 pb-12 md:p-4">
@@ -85,9 +88,10 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
           }
         </div>
         <div
-          dangerouslySetInnerHTML={{ __html: post.body.html }}
-          className="markdown-body list-disc list-inside text-base"
-        />
+          className="markdown-body text-base"
+        >
+          <MDXContent />
+        </div>
       </div>
     </article>
   )

@@ -26,11 +26,25 @@ export default function Page() {
         <LinkIcon />
         <Home />
         <Info />
-        {posts.map((post, idx) => {
-          return (
-            <Thumbnail key={idx} {...post} />
-          )
-        })}
+        <div>
+          <details>
+            <summary>Details</summary>
+            Something small enough to escape casual notice.
+          </details>
+          <details>
+            <summary>
+              フルーツ
+            </summary>
+            <ul>
+              <li>
+                リンゴ
+              </li>
+              <li>
+                ゴリラ
+              </li>
+            </ul>
+          </details>
+        </div>
       </div>
     </div>
   )

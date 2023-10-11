@@ -1,8 +1,10 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import remarkGfm from "remark-gfm";
 var Post = defineDocumentType(() => ({
   name: "Post",
-  fielPathPattern: `**/*.md`,
+  fielPathPattern: `**/*.mdx`,
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
@@ -16,9 +18,16 @@ var Post = defineDocumentType(() => ({
     url: { type: "string", resolve: (post) => `/posts/${post._raw.flattenedPath}` }
   }
 }));
-var contentlayer_config_default = makeSource({ contentDirPath: "posts", documentTypes: [Post] });
+var contentlayer_config_default = makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [remarkGfm]
+    // rehypePlugins: [highlight],
+  }
+});
 export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-EVLLN5VS.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-YY62366W.mjs.map

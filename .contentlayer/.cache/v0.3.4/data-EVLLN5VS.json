@@ -28,7 +28,7 @@
         "type": "Post",
         "url": "/posts/blog-contentlayer"
       },
-      "documentHash": "1697007124370",
+      "documentHash": "1697054330959",
       "hasWarnings": false,
       "documentTypeName": "Post"
     },
@@ -67,6 +67,39 @@
         "url": "/posts/post-02"
       },
       "documentHash": "1697015172397",
+      "hasWarnings": false,
+      "documentTypeName": "Post"
+    },
+    "memo-details-summary.md": {
+      "document": {
+        "title": "[memo] details/summaryタグでアコーディオン",
+        "date": "2023-10-12T00:00:00.000Z",
+        "category": "it",
+        "tags": [
+          "memo",
+          "html",
+          "css"
+        ],
+        "description": {
+          "raw": "details/summaryタグでアコーディオン作ってみた。",
+          "html": "<p>details/summaryタグでアコーディオン作ってみた。</p>"
+        },
+        "body": {
+          "raw": "details/summaryタグでアコーディオン作ってみた。\n## ソースコード\n```\n<details>\n  <summary>\n    フルーツ\n  </summary>\n  <ul>\n    <li>\n      リンゴ\n    </li>\n    <li>\n      ゴリラ\n    </li>\n  </ul>\n</details>\n```\n\n## 現物\n<details>\n  <summary>\n    フルーツ\n  </summary>\n  <ul>\n    <li>\n      リンゴ\n    </li>\n    <li>\n      ゴリラ\n    </li>\n  </ul>\n</details>\n\n## 感想\nソースコード一目でアコーディオンとわかるので可読性高くて良さそう。<br/>\n",
+          "html": "<p>details/summaryタグでアコーディオン作ってみた。</p>\n<h2>ソースコード</h2>\n<pre><code>&#x3C;details>\n  &#x3C;summary>\n    フルーツ\n  &#x3C;/summary>\n  &#x3C;ul>\n    &#x3C;li>\n      リンゴ\n    &#x3C;/li>\n    &#x3C;li>\n      ゴリラ\n    &#x3C;/li>\n  &#x3C;/ul>\n&#x3C;/details>\n</code></pre>\n<h2>現物</h2>\n<h2>感想</h2>\n<p>ソースコード一目でアコーディオンとわかるので可読性高くて良さそう。</p>"
+        },
+        "_id": "memo-details-summary.md",
+        "_raw": {
+          "sourceFilePath": "memo-details-summary.md",
+          "sourceFileName": "memo-details-summary.md",
+          "sourceFileDir": ".",
+          "contentType": "markdown",
+          "flattenedPath": "memo-details-summary"
+        },
+        "type": "Post",
+        "url": "/posts/memo-details-summary"
+      },
+      "documentHash": "1697056203270",
       "hasWarnings": false,
       "documentTypeName": "Post"
     }

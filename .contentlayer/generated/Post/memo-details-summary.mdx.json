@@ -1,0 +1,28 @@
+{
+  "title": "[memo] details/summaryタグでアコーディオン",
+  "date": "2023-10-12T00:00:00.000Z",
+  "category": "it",
+  "tags": [
+    "memo",
+    "html",
+    "css"
+  ],
+  "description": {
+    "raw": "details/summaryタグでアコーディオン作ってみた。",
+    "html": "<p>details/summaryタグでアコーディオン作ってみた。</p>"
+  },
+  "body": {
+    "raw": "details/summaryタグでアコーディオン作ってみた。\n## ソースコード\n```\n<details>\n  <summary>\n    フルーツ\n  </summary>\n  <ul>\n    <li>\n      リンゴ\n    </li>\n    <li>\n      ゴリラ\n    </li>\n  </ul>\n</details>\n```\n\n## 現物\n<details>\n  <summary>\n    フルーツ\n  </summary>\n  <ul>\n    <li>\n      リンゴ\n    </li>\n    <li>\n      ゴリラ\n    </li>\n  </ul>\n</details>\n\n## 感想\nソースコード一目でアコーディオンとわかるので可読性高くて良さそう。<br/>\n",
+    "code": "var Component=(()=>{var o=Object.create;var l=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var y=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),j=(e,n)=>{for(var r in n)l(e,r,{get:n[r],enumerable:!0})},c=(e,n,r,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of u(n))!x.call(e,i)&&i!==r&&l(e,i,{get:()=>n[i],enumerable:!(s=h(n,i))||s.enumerable});return e};var _=(e,n,r)=>(r=e!=null?o(p(e)):{},c(n||!e||!e.__esModule?l(r,\"default\",{value:e,enumerable:!0}):r,e)),g=e=>c(l({},\"__esModule\",{value:!0}),e);var a=y((C,d)=>{d.exports=_jsx_runtime});var M={};j(M,{default:()=>D,frontmatter:()=>f});var t=_(a()),f={type:\"Post\",title:\"[memo] details/summary\\u30BF\\u30B0\\u3067\\u30A2\\u30B3\\u30FC\\u30C7\\u30A3\\u30AA\\u30F3\",date:new Date(16970688e5),category:\"it\",tags:[\"memo\",\"html\",\"css\"],description:\"details/summary\\u30BF\\u30B0\\u3067\\u30A2\\u30B3\\u30FC\\u30C7\\u30A3\\u30AA\\u30F3\\u4F5C\\u3063\\u3066\\u307F\\u305F\\u3002\"};function m(e){let n=Object.assign({p:\"p\",h2:\"h2\",pre:\"pre\",code:\"code\"},e.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(n.p,{children:\"details/summary\\u30BF\\u30B0\\u3067\\u30A2\\u30B3\\u30FC\\u30C7\\u30A3\\u30AA\\u30F3\\u4F5C\\u3063\\u3066\\u307F\\u305F\\u3002\"}),`\n`,(0,t.jsx)(n.h2,{children:\"\\u30BD\\u30FC\\u30B9\\u30B3\\u30FC\\u30C9\"}),`\n`,(0,t.jsx)(n.pre,{children:(0,t.jsx)(n.code,{children:`<details>\n  <summary>\n    \\u30D5\\u30EB\\u30FC\\u30C4\n  </summary>\n  <ul>\n    <li>\n      \\u30EA\\u30F3\\u30B4\n    </li>\n    <li>\n      \\u30B4\\u30EA\\u30E9\n    </li>\n  </ul>\n</details>\n`})}),`\n`,(0,t.jsx)(n.h2,{children:\"\\u73FE\\u7269\"}),`\n`,(0,t.jsxs)(\"details\",{children:[(0,t.jsx)(\"summary\",{children:(0,t.jsx)(n.p,{children:\"\\u30D5\\u30EB\\u30FC\\u30C4\"})}),(0,t.jsxs)(\"ul\",{children:[(0,t.jsx)(\"li\",{children:(0,t.jsx)(n.p,{children:\"\\u30EA\\u30F3\\u30B4\"})}),(0,t.jsx)(\"li\",{children:(0,t.jsx)(n.p,{children:\"\\u30B4\\u30EA\\u30E9\"})})]})]}),`\n`,(0,t.jsx)(n.h2,{children:\"\\u611F\\u60F3\"}),`\n`,(0,t.jsxs)(n.p,{children:[\"\\u30BD\\u30FC\\u30B9\\u30B3\\u30FC\\u30C9\\u4E00\\u76EE\\u3067\\u30A2\\u30B3\\u30FC\\u30C7\\u30A3\\u30AA\\u30F3\\u3068\\u308F\\u304B\\u308B\\u306E\\u3067\\u53EF\\u8AAD\\u6027\\u9AD8\\u304F\\u3066\\u826F\\u3055\\u305D\\u3046\\u3002\",(0,t.jsx)(\"br\",{})]})]})}function b(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,Object.assign({},e,{children:(0,t.jsx)(m,e)})):m(e)}var D=b;return g(M);})();\n;return Component;"
+  },
+  "_id": "memo-details-summary.mdx",
+  "_raw": {
+    "sourceFilePath": "memo-details-summary.mdx",
+    "sourceFileName": "memo-details-summary.mdx",
+    "sourceFileDir": ".",
+    "contentType": "mdx",
+    "flattenedPath": "memo-details-summary"
+  },
+  "type": "Post",
+  "url": "/posts/memo-details-summary"
+}
