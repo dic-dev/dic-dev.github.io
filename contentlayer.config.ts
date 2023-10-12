@@ -1,6 +1,10 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import highlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrism from 'rehype-prism-plus'
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -25,6 +29,13 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
-    // rehypePlugins: [highlight],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeCodeTitles,
+      // @ts-ignore
+      rehypePrism,
+      rehypeAutolinkHeadings,
+      rehypeAccessibleEmojis,
+    ]
   },
 })

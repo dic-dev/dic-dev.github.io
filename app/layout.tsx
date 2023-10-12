@@ -1,4 +1,6 @@
 import './globals.css'
+import 'styles/markdown.css'
+import "../styles/prism.css"
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from 'components/Footer';

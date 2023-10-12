@@ -59,12 +59,11 @@ body {
   list-style: disc;
 }
 
-
 .markdown-body summary p {
   display: inline;
 }
 
-@media (max-width: 767px) {
-  .markdown-body {
-  }
-}
+/* @media (max-width: 767px) { */
+/*   .markdown-body { */
+/*   } */
+/* } */

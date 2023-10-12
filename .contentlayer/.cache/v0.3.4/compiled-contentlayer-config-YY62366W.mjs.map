@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../contentlayer.config.ts"],
-  "sourcesContent": ["import { defineDocumentType, makeSource } from 'contentlayer/source-files'\nimport highlight from 'rehype-highlight'\nimport remarkGfm from 'remark-gfm'\n\nexport const Post = defineDocumentType(() => ({\n  name: 'Post',\n  fielPathPattern: `**/*.mdx`,\n  contentType: 'mdx',\n  fields: {\n    title: { type: 'string', required: true },\n    date: { type: 'date', required: true },\n    category: { type: 'string' },\n    tags: { type: 'list', of: { type: 'string' } },\n    description: {\n      type: 'markdown',\n    },\n  },\n  computedFields: {\n    url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },\n  },\n}))\n\nexport default makeSource({\n  contentDirPath: 'posts',\n  documentTypes: [Post],\n  mdx: {\n    remarkPlugins: [remarkGfm],\n    // rehypePlugins: [highlight],\n  },\n})\n"],
-  "mappings": ";AAAA,SAAS,oBAAoB,kBAAkB;AAE/C,OAAO,eAAe;AAEf,IAAM,OAAO,mBAAmB,OAAO;AAAA,EAC5C,MAAM;AAAA,EACN,iBAAiB;AAAA,EACjB,aAAa;AAAA,EACb,QAAQ;AAAA,IACN,OAAO,EAAE,MAAM,UAAU,UAAU,KAAK;AAAA,IACxC,MAAM,EAAE,MAAM,QAAQ,UAAU,KAAK;AAAA,IACrC,UAAU,EAAE,MAAM,SAAS;AAAA,IAC3B,MAAM,EAAE,MAAM,QAAQ,IAAI,EAAE,MAAM,SAAS,EAAE;AAAA,IAC7C,aAAa;AAAA,MACX,MAAM;AAAA,IACR;AAAA,EACF;AAAA,EACA,gBAAgB;AAAA,IACd,KAAK,EAAE,MAAM,UAAU,SAAS,CAAC,SAAS,UAAU,KAAK,KAAK,aAAa,GAAG;AAAA,EAChF;AACF,EAAE;AAEF,IAAO,8BAAQ,WAAW;AAAA,EACxB,gBAAgB;AAAA,EAChB,eAAe,CAAC,IAAI;AAAA,EACpB,KAAK;AAAA,IACH,eAAe,CAAC,SAAS;AAAA;AAAA,EAE3B;AACF,CAAC;",
-  "names": []
-}

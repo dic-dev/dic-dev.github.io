@@ -1,6 +1,11 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypePrism from "rehype-prism-plus";
+import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 var Post = defineDocumentType(() => ({
   name: "Post",
   fielPathPattern: `**/*.mdx`,
@@ -22,12 +27,19 @@ var contentlayer_config_default = makeSource({
   contentDirPath: "posts",
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm]
-    // rehypePlugins: [highlight],
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeCodeTitles,
+      // @ts-ignore
+      rehypePrism,
+      rehypeAutolinkHeadings,
+      rehypeAccessibleEmojis
+    ]
   }
 });
 export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-YY62366W.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-AGCGNLVS.mjs.map

@@ -1,4 +1,3 @@
-import 'github-markdown-css'
 import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
