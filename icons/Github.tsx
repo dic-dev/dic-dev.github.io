@@ -4,9 +4,7 @@ const SvgComponent = (props: any) => (
     xmlns="http://www.w3.org/2000/svg"
     width={24}
     height={24}
-    style={{
-      fill: "#000",
-    }}
+    fill="none"
     {...props}
   >
     <path

@@ -19,12 +19,12 @@ const Page = ({ params }: { params: { tag: string } }) => {
   const postsPerPage = 4;
 
   return (
-    <div className="bg-white md:rounded md:shadow md:m-4 px-4 sm:px-6 pt-2 pb-12 md:p-6">
+    <>
       <div className="border-b border-b-gray-300 pb-4 mb-4">
         <Result totalPosts={posts.length} filter="Tag" value={params.tag} />
       </div>
       <CardList posts={posts} currentPage={1} postsPerPage={postsPerPage} path={`/tag/${params.tag}/page/`} query="" />
-    </div>
+    </>
   )
 }
 

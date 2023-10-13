@@ -77,7 +77,7 @@ const Pagination = ({ posts, currentPage, postsPerPage, path, query = '' }: Pagi
           return (
             <Link key={idx}
               href={path + String(value) + query}
-              className="relative z-10 inline-flex items-center bg-gray-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="relative z-10 inline-flex items-center bg-gray-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 border border-gray-300"
             >
               {value}
             </Link>

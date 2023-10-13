@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="md:pt-4 md:pb-8 border-t border-gray-300 md:border-t-transparent">
+    <footer className="md:pt-4 md:pb-8 border-t border-gray-300 dark:border-gray-600 md:border-t-transparent">
       <div className="w-full max-w-screen-xl mx-auto md:px-4">
         <div className="bg-white sm:rounded md:shadow dark:bg-gray-900 px-4 pt-6 sm:p-6">
           <div className="flex items-center justify-between">
@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <hr className="sm:my-6 border-gray-300 dark:border-gray-700" />
+          <hr className="sm:my-6 border-gray-300 dark:border-gray-600" />
           <span className="py-6 sm:py-0 block text-sm text-gray-500 text-center dark:text-gray-400">© 2023 <Link href="https://flowbite.com/" className="hover:underline">dic-dev</Link>. All Rights Reserved.</span>
         </div>
       </div>

@@ -10,6 +10,8 @@ import LinkIcon from 'icons/Link'
 import Home from 'icons/Home'
 import Info from 'icons/Info'
 import Thumbnail from 'components/Thumbnail'
+import Main from 'components/Main'
+import Badge from 'components/blog/Badge'
 
 export default function Page() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -20,7 +22,6 @@ export default function Page() {
         <h3>icons</h3>
         <Hamburger />
         <Close />
-        <Tag />
         <Category />
         <Search />
         <LinkIcon />
@@ -45,6 +46,8 @@ export default function Page() {
             </ul>
           </details>
         </div>
+        <Main>aaa</Main>
+        <Badge name="home" />
       </div>
     </div>
   )

@@ -1,5 +1,7 @@
 export default function Page() {
   return (
-    <h3>aaa</h3>
+    <>
+      <h3>aaa</h3>
+    </>
   )
 }

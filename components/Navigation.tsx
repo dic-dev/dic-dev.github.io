@@ -51,14 +51,14 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="bg-white shadow dark:bg-gray-900">
+      <nav className="bg-white shadow dark:shadow-none border-b border-b-transparent dark:border-b-gray-600 dark:bg-gray-950">
         <div className="max-w-screen-xl md:h-28 flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 md:px-10 py-4">
           <Link href="/" className="flex items-center">
             <span className="self-center text-2xl md:text-4xl font-semibold whitespace-nowrap dark:text-white">DY Blog (*´∀｀)</span>
           </Link>
 
           <div className="hidden w-full md:block md:w-auto">
-            <ul className="text-lg text-gray-700 font-medium flex items-center rounded-lg space-x-8 dark:bg-gray-900">
+            <ul className="text-lg text-gray-700 font-medium flex items-center rounded-lg space-x-8">
               <li>
                 <Link href="/" className="block rounded hover:underline dark:text-white" aria-current="page">Home</Link>
               </li>
@@ -78,12 +78,12 @@ const Navigation = () => {
           </div>
 
           <div className="block md:hidden md:w-auto">
-            <ul className="font-medium flex items-center space-x-4 md:space-x-8 dark:bg-gray-800">
+            <ul className="font-medium flex items-center space-x-4 md:space-x-8">
               <li>
-                <button type="button" onClick={searchOpen} className="flex justify-center items-center text-gray-900 rounded dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
+                <button type="button" onClick={searchOpen} className="flex justify-center items-center text-gray-900 rounded dark:text-white">
                   <Search
                     size={30}
-                    className="fill-gray-700 stroke-gray-700"
+                    className="fill-gray-700 stroke-gray-700 dark:stroke-white dark:fill-white"
                   />
                 </button>
               </li>
@@ -91,12 +91,12 @@ const Navigation = () => {
               <li>
                 <button type="button"
                   onClick={menuOpen}
-                  className="flex justify-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex justify-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400"
                   aria-controls="mobile-menu-2" aria-expanded="false"
                 >
                   <span className="sr-only">Open main menu</span>
                   <Hamburger
-                    className="fill-gray-700"
+                    className="fill-gray-700 dark:fill-white"
                   />
                 </button>
               </li>
@@ -110,7 +110,7 @@ const Navigation = () => {
         style={{
           display: menuToggle ? "block" : "none"
         }}
-        className="modal fixed top-0 left-0 z-20 w-full h-full bg-gray-200"
+        className="modal fixed top-0 left-0 z-20 w-full h-full bg-gray-200 dark:bg-gray-900"
       >
         <div onClick={menuClose} className="h-full flex flex-col justify-between">
           <nav onClick={e => { e.stopPropagation(); }} className="dark:bg-gray-900">
@@ -121,16 +121,16 @@ const Navigation = () => {
                 </a>
 
                 <div className="block md:w-auto">
-                  <ul className="font-medium flex items-center space-x-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <ul className="font-medium flex items-center space-x-8">
                     <li>
                       <button type="button"
                         onClick={menuClose}
-                        className="flex justify-center items-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        className="flex justify-center items-center text-sm text-gray-500 rounded-lg dark:text-gray-400"
                         aria-controls="mobile-menu-2" aria-expanded="false"
                       >
                         <span className="sr-only">Open main menu</span>
                         <Close
-                          className="fill-gray-700"
+                          className="fill-gray-700 dark:fill-white"
                         />
                       </button>
                     </li>
@@ -139,18 +139,18 @@ const Navigation = () => {
               </div>
             </div>
 
-            <ul className="flex flex-col items-center mx-auto px-4 pt-6 pb-6 w-full font-medium text-center">
+            <ul className="flex flex-col items-center mx-auto px-4 pt-6 pb-6 w-full font-medium text-center text-gray-700 dark:text-gray-400">
               <li className="w-full">
-                <Link href="/" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
+                <Link href="/" onClick={menuClose} className="block py-3 border-b border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Home</Link>
               </li>
               <li className="w-full">
-                <Link href="/about" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
+                <Link href="/about" onClick={menuClose} className="block py-3 border-b border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">About</Link>
               </li>
               <li className="w-full">
-                <Link href="/works" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Works (準備中)</Link>
+                <Link href="/works" onClick={menuClose} className="block py-3 border-b border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Works (準備中)</Link>
               </li>
               <li className="w-full">
-                <Link href="/contact" onClick={menuClose} className="block py-3 text-gray-700 border-b border-gray-100 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
+                <Link href="/contact" onClick={menuClose} className="block py-3 border-b border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-700">Contact</Link>
               </li>
             </ul>
           </nav>
